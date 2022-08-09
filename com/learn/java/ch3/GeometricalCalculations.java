@@ -14,5 +14,6 @@ class GeometricalCalculations{
 		System.out.println("Circle radius");
 		t=s.nextFloat();
 		System.out.println("Area : "+(Math.PI*t*t));	
+		System.out.println("modifying");
 	}
 }
