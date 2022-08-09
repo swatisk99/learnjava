@@ -1,4 +1,4 @@
-class TypeCasting{
+class Main{
 	public static void main(String args[]){
 		System.out.println("Byte to int");
 		byte b = 23;
@@ -71,18 +71,17 @@ class TypeCasting{
 		System.out.println("i and c " + i + " " + c);
 
 		System.out.println("\nInt to boolean");
-		System.out.println("int cannot be converted to boolean");
+		i=25;
+		//boolean boo=(boolean)i;	incompatible types: int cannot be converted to boolean");
 
 		System.out.println("Boolean to int");
-		System.out.println("error: incompatible types: boolean cannot be converted to int");
+		boo=false;
+    	//i=(int)boo;   error: incompatible types: boolean cannot be converted to int");
 
 		System.out.println("\nChar to string");
 		c='s';
-		String s=Character.toString(c);
-		System.out.println("incompatible types: char cannot be converted to String but by Character.toString() ONLY\nc and s " + c+ " " + s);
+		//String s=(char)c;	incompatible types: char cannot be converted to String but by Character.toString() ONLY
 		System.out.println("String to char");
-		s="swati";
-		c=s.charAt(0);
-		System.out.println("incompatible types: String cannot be converted to char BUT by charAt() ONLY\ns and c " + s + " " + c);
+		//s="swati";	incompatible types: String cannot be converted to char BUT by charAt() ONLY;
 
 }}
