@@ -1,4 +1,3 @@
-package com.learn.java.intro;
 import java.util.*;
 class Summation{
 	public static void main(String args[]){

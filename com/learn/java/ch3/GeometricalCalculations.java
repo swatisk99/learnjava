@@ -1,4 +1,3 @@
-package com.learn.java.ch3; 
 import java.util.*;
 class GeometricalCalculations{
 	public static void main(String args[]){
