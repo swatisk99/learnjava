@@ -1,4 +1,4 @@
-class Main{
+class TypeCasting{
 	public static void main(String args[]){
 		System.out.println("Byte to int");
 		byte b = 23;
@@ -75,7 +75,7 @@ class Main{
 		//boolean boo=(boolean)i;	incompatible types: int cannot be converted to boolean");
 
 		System.out.println("Boolean to int");
-		boo=false;
+		boolean boo=false;
     	//i=(int)boo;   error: incompatible types: boolean cannot be converted to int");
 
 		System.out.println("\nChar to string");
