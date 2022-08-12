@@ -11,7 +11,7 @@ class LargeValues {
 		BigInteger bi=new BigInteger("8328673647637469487237");
 		BigDecimal bd=new BigDecimal("0.839878947848374834872387398");
 		Scanner sc=new Scanner(System.in);
-		System.out.println(bi+"\n"+bd+"\n"+Double.MIN_VALUE+""+d);
+		System.out.println(bi+"\n"+bd+"\n"+Double.MIN_VALUE+"\n"+d);
 	}
 
 }
