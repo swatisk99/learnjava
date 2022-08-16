@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class oddoreven {
+public class OddorEven {
 
 	public static void main(String[] args) {
 		float a;
