@@ -73,7 +73,6 @@ public class MatrixOperations {
 					productMatrix[i][j]+=matrix1[i][k]*matrix2[k][i];
 			}System.out.print("\n");
 		}
-		
 		System.out.print("Product of matrix 1 and matrix2 :\n");
 		for(int i=0;i<row;i++){
 			for(int j=0;j<column;j++) {	

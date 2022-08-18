@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class StringOperations {
-	static void titleCase(String str) {
+	static void toTitleCase(String str) {
 		int i=0;
 		String newString=new String();
 		while(i<str.length())
@@ -21,7 +21,7 @@ public class StringOperations {
 		System.out.print(newString);
 	}
 	
-	static void upperCase(String str) {
+	static void toUpperCase(String str) {
 		int i=0;
 		String newString=new String();
 		while(i<str.length())
@@ -34,7 +34,7 @@ public class StringOperations {
 		System.out.print(newString);
 	}
 	
-	static void lowerCase(String str) {
+	static void toLowerCase(String str) {
 		int i=0;
 		String newString=new String();
 		while(i<str.length())
@@ -47,7 +47,7 @@ public class StringOperations {
 		System.out.print(newString);
 	}
 	
-	static void sentenceCase(String str) {
+	static void toSentenceCase(String str) {
 		int i=0;
 		String newString=new String();
 		while(i<str.length())
@@ -77,16 +77,16 @@ public class StringOperations {
 		int i=0,choice=s.nextInt();
 		switch (choice){
 			case 1:
-				titleCase(str);
+				toTitleCase(str);
 				break;
 			case 2:
-				upperCase(str);
+				toUpperCase(str);
 				break;
 			case 3:
-				lowerCase(str);
+				toLowerCase(str);
 				break;
 			case 4:
-				sentenceCase(str);
+				toSentenceCase(str);
 				break;
 			default:
 				System.out.print("wrong choice");
