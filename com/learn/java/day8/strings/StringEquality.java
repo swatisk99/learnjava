@@ -1,3 +1,4 @@
+package learn.java.day8.strings;
 import java.util.Scanner;
 
 public class StringEquality {

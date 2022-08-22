@@ -1,4 +1,3 @@
-
 class Arithmetics{
 	public static void main(String args[]){
 		int a,b,c,d;

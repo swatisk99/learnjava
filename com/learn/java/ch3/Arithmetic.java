@@ -1,3 +1,4 @@
+package learn.java.ch3;
 import java.util.*;
 class Arithmetic{
 	public static void main(String args[]){
