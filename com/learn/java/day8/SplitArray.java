@@ -6,7 +6,7 @@ public class SplitArray {
 		System.out.print("Enter size of array");
 		Scanner s=new Scanner(System.in);
 		int size=s.nextInt();
-		int index=0,sumeven=0,sumodd=0;
+		int index=0,sumEven=0,sumOdd=0;
 		System.out.print("Enter "+size+" elements: ");
 		long [] array,odd,even;
 		int sizeEven=0,sizeOdd=0;

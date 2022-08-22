@@ -2,35 +2,38 @@ import java.util.Scanner;
 import java.lang.Math;
 
 public class Armstrong {
-
-	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		System.out.print("Enter number\t: ");
-		int num=sc.nextInt();
-		int i=num,j=num,arm=0,digits=0;
+	static void findIfArmstrong(int number) {
+		int i=number,j=number,armstrong=0,digits=0;
 		while(j>0)
 		{	digits++;
 			j/=10;
 		}
 		while(i>0)
-		{	arm+=Math.pow(i%10,digits);
+		{	armstrong+=Math.pow(i%10,digits);
 			i/=10;
 		}
-		if(arm==num)
-			System.out.print(num+" is a Armstrong number");
+		if(armstrong==number)
+			System.out.print(number+" is an Armstrong number");
 		else
-			System.out.println(num+" is not Armstrong number");
-		System.out.println("\nArmstrong numbers from 100 to 999 : ");
+			System.out.println(number+" is not Armstrong number");
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter number\t: ");
+		int number=sc.nextInt();
+		int i,j,armstrong;
+		findIfArmstrong(number);
 		
+		System.out.println("\nArmstrong numbers from 100 to 999 : ");	
 		for(j=100;j<=999;j++)
 		{	i=j;
-			arm=0;
+			armstrong=0;
 			while(i>0)
-			{	arm+=Math.pow(i%10,3);
+			{	armstrong+=Math.pow(i%10,3);
 				i/=10;
 			}
-			if(arm==j)
-				System.out.print(arm+"  ");
+			if(armstrong==j)
+				System.out.print(armstrong+"  ");
 			
 		}
 	}

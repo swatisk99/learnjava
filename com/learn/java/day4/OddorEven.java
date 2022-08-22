@@ -6,7 +6,7 @@ public class OddorEven {
 		float a;
 		Scanner scan=new Scanner(System.in);
 		System.out.println("Enter a number");
-		a=scan.nextFloat();
+		a=scan.nextInt();
 		if((a%2)==1)
 			System.out.println("Odd");
 		else

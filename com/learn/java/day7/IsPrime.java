@@ -6,18 +6,18 @@ public class IsPrime {
 		Scanner sc=new Scanner(System.in);
 		int i=2,n=2;
 		//System.out.print(2 + " "+3+" ");
-		boolean isprime=true;
+		boolean isPrime=true;
 		while(n<=100) {
 			while(i<=n/2) {
 				if((n%i)==0)
-				{	isprime=false;
+				{	isPrime=false;
 					break;
 				}
 				else
-				{	isprime=true;
+				{	isPrime=true;
 					i++;}
 			}
-			if(isprime)
+			if(isPrime)
 				System.out.print(n+" ");
 			i=2;
 			n++;

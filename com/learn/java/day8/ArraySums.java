@@ -6,17 +6,17 @@ public class ArraySums {
 		System.out.print("enter size of array");
 		Scanner s=new Scanner(System.in);
 		int size=s.nextInt();
-		int i=0,sumeven=0,sumodd=0;
+		int i=0,sumEven=0,sumOdd=0;
 		System.out.print("enter "+size+" elements: ");
 		int a[]=new int [size];
 		while(i<size)
 		{	a[i]=s.nextInt();
 			if(i%2==0)
-				sumodd+=a[i++];
+				sumOdd+=a[i++];
 			else
-				sumeven+=a[i++];
+				sumEven+=a[i++];
 		}
-		System.out.print("Sum of elements in odd position : "+sumodd+"\nSum of elements in even position : "+sumeven);
+		System.out.print("Sum of elements in odd position : "+sumOdd+"\nSum of elements in even position : "+sumEven);
 	}
 
 }

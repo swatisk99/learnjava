@@ -1,14 +1,11 @@
-package learn.java.ch3;
 import java.util.*;
 class Arithmetic{
 	public static void main(String args[]){
-		int a,b;
-		float c;
+		double value1,value2;
 		Scanner s=new Scanner(System.in);
 		System.out.println("Enter 2 numbers");
-		a=s.nextInt();
-		b=s.nextInt();
-		c=(float)a/(float)b;
-		System.out.format("sum\t:%d%ndifference\t:%d%nproduct\t:%d%nquotient\t:%f%n",(a+b),(a-b),(a*b),c);
+		value1=s.nextDouble();
+		value2=s.nextDouble();
+		System.out.format("sum\t:%d%ndifference\t:%d%nproduct\t:%d%nquotient\t:%f%n",(value1+value2),(value1-value2),(value1*value2),(value1/value2));
 		}
 }

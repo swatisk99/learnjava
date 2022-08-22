@@ -2,16 +2,16 @@ import java.util.*;
 class GeometricalCalculations{
 	public static void main(String args[]){
 		Scanner s=new Scanner(System.in);
-		float r,t;
+		double side,length,breadth,radius; 
 		System.out.println("\n\nSide of square");
-		r=s.nextFloat();
-		System.out.println("Area : "+(r*r));
+		side=s.nextFloat();
+		System.out.println("Area : "+(side*side));
 		System.out.println("Sides of rectangle");
-		r=s.nextFloat();
-		t=s.nextFloat();
-		System.out.println("Area : "+(r*t));
+		length=s.nextFloat();
+		breadth=s.nextFloat();
+		System.out.println("Area : "+(length*breadth));
 		System.out.println("Circle radius");
-		t=s.nextFloat();
-		System.out.println("Area : "+(Math.PI*t*t));
+		radius=s.nextFloat();
+		System.out.println("Area : "+(Math.PI*radius*radius));
 	}
 }

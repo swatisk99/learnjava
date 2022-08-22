@@ -5,8 +5,8 @@ public class Palindrome {
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		System.out.print("Enter number\t: ");
-		int num=sc.nextInt();
-		int i=num,pal=0;
+		long num=sc.nextLong();
+		long i=num,pal=0;
 		while(i>0)
 		{	pal=pal*10+i%10;
 			i/=10;

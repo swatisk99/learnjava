@@ -4,19 +4,19 @@ public class MBBSorBE {
 
 	public static void main(String[] args) {
 		System.out.print("Cutoff for MBBS and Engg respectively(out of 100)\t: ");
-		float mbbs,engg;
-		Scanner scan=new Scanner(System.in);
-		mbbs=scan.nextFloat();
-		engg=scan.nextFloat();
+		double mbbsCutoff, enggCutoff;
+		Scanner scan = new Scanner(System.in);
+		mbbsCutoff = scan.nextDouble();
+		enggCutoff = scan.nextDouble();
 		System.out.print("Enter marks\t:");
-		float mark=scan.nextFloat();
-		if((mark>=mbbs)&&(mark>=engg)) 
+		double marks = scan.nextDouble();
+		if ((marks >= mbbsCutoff) && (marks >= enggCutoff))
 			System.out.println("Eligible for both");
-		else if(mark>=engg)
+		else if (marks >= enggCutoff)
 			System.out.println("Eligible for BE");
 		else
 			System.out.println("Ineligible for both");
-			
+
 	}
 
 }

@@ -1,4 +1,4 @@
-package learn.java.day8.strings;
+package strings;
 import java.util.Scanner;
 
 public class ReverseString {
