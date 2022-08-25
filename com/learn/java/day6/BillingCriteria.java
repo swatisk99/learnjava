@@ -1,3 +1,4 @@
+package com.learn.java.day6;
 import java.util.Scanner;
 
 public class BillingCriteria {

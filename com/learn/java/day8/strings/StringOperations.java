@@ -1,8 +1,8 @@
-package strings;
+package com.learn.java.day8.strings;
 import java.util.Scanner;
 
 public class StringOperations {
-	static void toTitleCase(String str) {
+	static void getTitleCase(String str) {
 		int i=0;
 		String newString=new String();
 		while(i<str.length())
@@ -22,7 +22,7 @@ public class StringOperations {
 		System.out.print(newString);
 	}
 	
-	static void toUpperCase(String str) {
+	public static String getUpperCase(String str) {
 		int i=0;
 		String newString=new String();
 		while(i<str.length())
@@ -32,10 +32,10 @@ public class StringOperations {
 					newString=newString+str.charAt(i);
 			i++;
 		}
-		System.out.print(newString);
+		return (newString);
 	}
 	
-	static void toLowerCase(String str) {
+	static void getLowerCase(String str) {
 		int i=0;
 		String newString=new String();
 		while(i<str.length())
@@ -48,7 +48,7 @@ public class StringOperations {
 		System.out.print(newString);
 	}
 	
-	static void toSentenceCase(String str) {
+	static void getSentenceCase(String str) {
 		int i=0;
 		String newString=new String();
 		while(i<str.length())
@@ -76,18 +76,19 @@ public class StringOperations {
 		String str=s.nextLine();
 		System.out.print("Convert to :\n1.Title Case\t2.UPPER CASE\t3.lower case\t4.Sentence case\nEnter choice : ");
 		int i=0,choice=s.nextInt();
+		String result=new String();
 		switch (choice){
 			case 1:
-				toTitleCase(str);
+				getTitleCase(str);
 				break;
 			case 2:
-				toUpperCase(str);
+				result = getUpperCase(str);
 				break;
 			case 3:
-				toLowerCase(str);
+				getLowerCase(str);
 				break;
 			case 4:
-				toSentenceCase(str);
+				getSentenceCase(str);
 				break;
 			default:
 				System.out.print("wrong choice");

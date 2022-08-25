@@ -1,3 +1,4 @@
+package com.learn.java.ch3;
 class TypeCasting{
 	public static void main(String args[]){
 		System.out.println("Byte to int");

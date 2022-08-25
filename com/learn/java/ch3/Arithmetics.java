@@ -1,3 +1,4 @@
+package com.learn.java.ch3;
 class Arithmetics{
 	public static void main(String args[]){
 		int a,b,c,d;

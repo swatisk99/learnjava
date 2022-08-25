@@ -1,3 +1,4 @@
+package com.learn.java.day7;
 import java.util.Scanner;
 public class Factorial {
 	public static void main(String[] args) {

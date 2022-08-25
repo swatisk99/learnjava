@@ -1,4 +1,4 @@
-package strings;
+package com.learn.java.day8.strings;
 
 public class FindString {
 

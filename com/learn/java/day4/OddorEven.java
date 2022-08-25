@@ -1,3 +1,4 @@
+package com.learn.java.day4;
 import java.util.Scanner;
 
 public class OddorEven {

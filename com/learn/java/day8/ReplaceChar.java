@@ -1,3 +1,4 @@
+package com.learn.java.day8;
 import java.util.Scanner;
 
 public class ReplaceChar {
