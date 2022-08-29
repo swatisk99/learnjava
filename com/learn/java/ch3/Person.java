@@ -2,6 +2,7 @@ package com.learn.java.ch3;
 
 import java.util.*;
 
+
 class Person{
 	public static void main(String args[]){
 		Scanner s=new Scanner(System.in);

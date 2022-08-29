@@ -8,5 +8,6 @@ class Arithmetic{
 		value1=s.nextDouble();
 		value2=s.nextDouble();
 		System.out.format("sum\t:%d%ndifference\t:%d%nproduct\t:%d%nquotient\t:%f%n",(value1+value2),(value1-value2),(value1*value2),(value1/value2));
-		}
+		s.close();
+	}
 }
