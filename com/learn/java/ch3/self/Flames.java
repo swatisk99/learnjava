@@ -35,10 +35,13 @@ public class Flames {
 		name1=scan.next();
 		System.out.println("Enter second name");
 		name2=scan.next();
+		//long start=System.nanoTime();
 		int j,i=0;
-		while(i<name1.length()) {
+		int lengthOfName1=name1.length();
+		int lengthOfName2=name2.length();
+		while(i<lengthOfName1) {
 			j=0;
-			while(j<name2.length()){
+			while(j<lengthOfName2){
 				if(name2.charAt(j)==name1.charAt(i)) 
 				{	name1 = removeLetter(name1,i);
 					i--;
@@ -47,7 +50,9 @@ public class Flames {
 				}
 				else
 					j++;
-			}i++;
+				lengthOfName2=name2.length();
+			}
+			i++;lengthOfName1=name1.length();
 		}
 		int value=name1.length()+name2.length();
 		System.out.println(name1+""+name2+" -> "+value+" letters");
@@ -64,11 +69,14 @@ public class Flames {
 			case 'E':	System.out.println("Enemies");
 						break;
 			case 'S':	System.out.println("Siblings");
-						break;
-					
-		
-			
+						break;			
 		}
+		/**	long end=System.nanoTime();
+			System.out.println(end-start);
+			Runtime runtime=Runtime.getRuntime();
+			System.out.println(runtime.totalMemory()-runtime.freeMemory());
+		**/
+		
 	}
 
 }
