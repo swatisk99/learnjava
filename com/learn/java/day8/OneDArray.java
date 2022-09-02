@@ -18,6 +18,7 @@ public class OneDArray {
 		System.out.println("Elements of array in reverse : ");
 		for(i=array.length-1;i>=0;i--)
 			System.out.print(array[i]+" ");
+		
 		SortArray sort=new SortArray();
 		array=sort.getAscendingOrder(array);
 		System.out.println("\n"+array[2]+" is the third smallest number.");

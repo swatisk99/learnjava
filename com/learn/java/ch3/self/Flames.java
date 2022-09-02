@@ -5,6 +5,22 @@ import com.learn.java.day8.strings.StringOperations;
 
 
 public class Flames {
+	/**
+	 * checks if name only contains space
+	 * @param name
+	 * @return
+	 */
+	public static boolean checkIfEmpty(String name) {
+		int lengthOfName=name.length();
+		int i=0;
+		while(i<lengthOfName){
+			// Adds substring before ' ' to new string
+			if(name.charAt(i++)!=' ') {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	/**
 	 * Removes spaces within name
@@ -25,8 +41,6 @@ public class Flames {
 				i++;	
 			}
 			nameWOSpace += name.substring(startPosition,lengthOfName);
-			System.out.println(nameWOSpace);
-
 			return nameWOSpace;
 		}
 		
@@ -38,9 +52,9 @@ public class Flames {
 		public static boolean checkNameValidity(String name) {
 			int lengthOfName=name.length(),i=0;
 			while(i<lengthOfName) {
-				if(!checkIfLetter(name.charAt(i++))) {
+				if(!checkIfLetter(name.charAt(i))&&(name.charAt(i)!=' ')) {
 					return false;
-				}
+				}i++;
 			}
 			return true;
 		}
@@ -78,7 +92,6 @@ public class Flames {
 				{	name1 = removeLetter(name1,i);
 					i--;
 					name2 = removeLetter(name2,j);
-					System.out.println(name1+" "+name2);
 					break;
 				}
 				else
@@ -91,7 +104,7 @@ public class Flames {
 	}
 
 		/**
-		 * remove letterat position i from a string
+		 * remove letter at position i from a string
 		 * @param name
 		 * @param i : stores the position of letter to be removed
 		 * @return result stores the new string
@@ -136,10 +149,10 @@ public class Flames {
 		if(uniqueCharLength!=0) {
 			char relation=findFlames(uniqueCharLength);
 			switch (relation) {
-				case 'F':	return "Friends";
-				case 'L':	return "Lovers";
-				case 'A':	return "Acquaintance";
-				case 'M':	return "Married";
+				case 'F':	return "Friendship";
+				case 'L':	return "Love";
+				case 'A':	return "Affection";
+				case 'M':	return "Marriage";
 				case 'E':	return "Enemies";
 				case 'S':	return "Siblings";			
 			}
@@ -157,6 +170,7 @@ public class Flames {
 	public static void printRelation(String relation) {
 		System.out.print("\n"+relation);
 	}
+
 	public static void main(String[] args) {
 		/** Read two names**/
 		String name1,name2;
@@ -167,32 +181,41 @@ public class Flames {
 		name2=scan.nextLine();
 		
 												//long start=System.nanoTime();
-		/** Removing spaces from the name **/
-		name1 = removeSpace(name1);
-		name2 = removeSpace(name2);
 		
 		/**	Check whether names are valid **/
 		if((!checkNameValidity(name1))||(!checkNameValidity(name2))){
-				System.out.println("Invalid name!!!\nName should only contain letters");
+			System.out.println("Invalid name!!!\nName should only contain letters");
+		}
+		else if(!checkIfEmpty(name1)||(!checkIfEmpty(name2))) {
+			System.out.println("Enter 2 names!!!");			
 		}
 		else{
 			/**	Check whether names are same **/
 			if(name1.equals(name2)) {
-				System.out.println("Please enter two different names between 2 and 100 characters long!");
+				System.out.println("Please enter two different names between 2 characters long!");
 			}
 			else {
-				/**	Get length of unique letters **/
-				int uniqueCharLength = getUniqueCharLen(name1,name2);
-				System.out.println(name1+" and "+name2+" have "+uniqueCharLength+" unique letters");
-				printRelation(getRelation(uniqueCharLength));
+				/** Removing spaces from the name **/
+				name1 = removeSpace(name1);
+				name2 = removeSpace(name2);
+				
+				
+				if((name1.length()==1)||(name2.length()==1)) {
+					System.out.println("Names should contain atleast 2 letters each");
+				}
+				
+				else {
+					/**	Get length of unique letters **/
+					int uniqueCharLength = getUniqueCharLen(name1,name2);
+					System.out.println(name1+" and "+name2+" have "+uniqueCharLength+" unique letters");
+					printRelation(getRelation(uniqueCharLength));
+				}
 			}
 		}
 		/**	long end=System.nanoTime();
 			System.out.println(end-start);
 			Runtime runtime=Runtime.getRuntime();
 			System.out.println(runtime.totalMemory()-runtime.freeMemory());
-		**/
-		
+		**/	
 	}
-
 }
