@@ -6,9 +6,10 @@ public class Building {
 	
 	public static void main(String[] args) {
 		Scanner scan=new Scanner(System.in);
-		double length=scan.nextDouble();
+		System.out.println("Enter floor length : ");
+		double length = scan.nextDouble();
 		System.out.println("Enter floor width : ");
-		double width=scan.nextDouble();
+		double width = scan.nextDouble();
 		System.out.println("Enter floor height : ");
 		double height =scan.nextDouble();
 		
