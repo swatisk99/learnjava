@@ -22,17 +22,17 @@ public class StringOperations {
 		System.out.print(newString);
 	}
 	
-	public static String getUpperCase(String str) {
+	public static StringBuilder getUpperCase(StringBuilder name1) {
 		int i=0;
-		String newString=new String();
-		while(i<str.length())
-		{	if((str.charAt(i)>=97)&&(str.charAt(i)<=122))
-					newString=newString+(char)(str.charAt(i)-32);
+		StringBuilder strb = new StringBuilder();
+		while(i<name1.length())
+		{	if((name1.charAt(i)>=97)&&(name1.charAt(i)<=122))
+					strb.append((char)(name1.charAt(i)-32));
 			else
-					newString=newString+str.charAt(i);
+					strb.append(name1.charAt(i));
 			i++;
 		}
-		return (newString);
+		return strb;
 	}
 	
 	static void getLowerCase(String str) {
@@ -72,8 +72,10 @@ public class StringOperations {
 	
 	public static void main(String[] args) {
 		Scanner s=new Scanner(System.in);
+		
 		System.out.println("Enter string");
 		String str=s.nextLine();
+		StringBuilder strb = new StringBuilder(str);
 		System.out.print("Convert to :\n1.Title Case\t2.UPPER CASE\t3.lower case\t4.Sentence case\nEnter choice : ");
 		int i=0,choice=s.nextInt();
 		String result=new String();
@@ -82,7 +84,7 @@ public class StringOperations {
 				getTitleCase(str);
 				break;
 			case 2:
-				result = getUpperCase(str);
+				System.out.println(getUpperCase(strb));
 				break;
 			case 3:
 				getLowerCase(str);
