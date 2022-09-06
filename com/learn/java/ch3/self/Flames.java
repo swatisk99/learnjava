@@ -10,7 +10,8 @@ public class Flames {
 	 * @param name
 	 * @return
 	 */
-	public static boolean checkIfEmpty(String name) {
+	static StringBuilder flames=new StringBuilder("FLAMES");
+	public static boolean checkIfEmpty(StringBuilder name) {
 		int lengthOfName=name.length();
 		int i=0;
 		while(i<lengthOfName){
@@ -25,23 +26,18 @@ public class Flames {
 	/**
 	 * Removes spaces within name
 	 * @param name
-	 * @return nameWOSpace contains string without space.
+	 * @return name now contains string without space.
 	 */
-		public static String removeSpace(String name) {
+		public static StringBuilder removeSpace(StringBuilder name) {
 			int lengthOfName=name.length();
-			int i=0,j=1,startPosition=0;
-			int countSpaces=0;
-			String nameWOSpace="";
+			int i=0;
 			while(i<lengthOfName){
-				// Adds substring before ' ' to new string
 				if(name.charAt(i)==' ') {
-					nameWOSpace += name.substring(startPosition,i);
-					startPosition=i+1;
+					name = name.delete(i,i+1);
 				}		
 				i++;	
 			}
-			nameWOSpace += name.substring(startPosition,lengthOfName);
-			return nameWOSpace;
+			return name;
 		}
 		
 		/**
@@ -49,7 +45,7 @@ public class Flames {
 		 * @param name
 		 * @return
 		 */
-		public static boolean checkNameValidity(String name) {
+		public static boolean checkNameValidity(StringBuilder name) {
 			int lengthOfName=name.length(),i=0;
 			while(i<lengthOfName) {
 				if(!checkIfLetter(name.charAt(i))&&(name.charAt(i)!=' ')) {
@@ -79,7 +75,7 @@ public class Flames {
 		 * @param name2
 		 * @return sum of length of unique letters
 		 */
-		public static int getUniqueCharLen(String name1,String name2) {
+		public static int getUniqueCharLen(StringBuilder name1,StringBuilder name2) {
 		int j,i=0;
 		int lengthOfName1=name1.length();
 		int lengthOfName2=name2.length();
@@ -89,9 +85,9 @@ public class Flames {
 			j=0;
 			while(j<lengthOfName2){
 				if(name2.charAt(j)==name1.charAt(i)) 
-				{	name1 = removeLetter(name1,i);
+				{	name1.delete(i, i+1);
 					i--;
-					name2 = removeLetter(name2,j);
+					name2.delete(j, j+1);
 					break;
 				}
 				else
@@ -103,23 +99,7 @@ public class Flames {
 		return name1.length()+name2.length();
 	}
 
-		/**
-		 * remove letter at position i from a string
-		 * @param name
-		 * @param i : stores the position of letter to be removed
-		 * @return result stores the new string
-		 */
-		public static String removeLetter(String name,int i) {
-		int k=0;
-		String result="";
-		while(k<i) {
-			result+=name.charAt(k++);
-		}
-		while(k<(name.length()-1)) {
-			result+=name.charAt(++k);
-		}
-		return result;
-	}
+		
 	
 	/**
 	 * For the given count, remove letters from "FLAMES" till only one remain
@@ -127,12 +107,12 @@ public class Flames {
 	 * @return last remaining letter from 'FLAMES'
 	 */
 	public static char findFlames(int uniqueCharLength) {
-		String flames="FLAMES";
+		
 		int position,startingPosition=0;
 		System.out.print("FLAMES");
 		while(flames.length()>1) {
 			position=(startingPosition + uniqueCharLength - 1)%flames.length();
-			flames = removeLetter(flames,position);
+			flames = flames.delete(position,position+1);
 			startingPosition=position%flames.length();
 			System.out.print(" -> "+flames);
 			
@@ -173,12 +153,12 @@ public class Flames {
 
 	public static void main(String[] args) {
 		/** Read two names**/
-		String name1,name2;
+		StringBuilder name1,name2;
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter first name");
-		name1=scan.nextLine();
+		name1 = new StringBuilder(scan.nextLine());
 		System.out.println("Enter second name");
-		name2=scan.nextLine();
+		name2 = new StringBuilder(scan.nextLine());
 		
 												//long start=System.nanoTime();
 		
