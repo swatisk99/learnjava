@@ -5,10 +5,10 @@ import com.learn.java.day8.strings.StringOperations;
 public class UseJar {
 
 	public static void main(String[] args) {
-		String s=new String("Accessed Strings.jar");
-		String result=new String();
+		StringBuilder s=new StringBuilder("Accessed Strings.jar");
+		StringBuilder result=new StringBuilder();
 		result =  StringOperations.getUpperCase(s);
-		System.out.print(s);
+		System.out.print(result);
 	}
 
 }

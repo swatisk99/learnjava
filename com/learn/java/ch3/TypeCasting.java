@@ -6,7 +6,7 @@ class TypeCasting{
 		int intValue=byteValue;
 		System.out.println("byteValue and intValue " + byteValue + " " + intValue);
     		System.out.println("Int to byte");
-		intValue=300;	
+		intValue=256;	
 		byteValue = (byte) intValue;
 		System.out.println("intValue and byteValue " + intValue + " " + byteValue);
 
@@ -67,7 +67,7 @@ class TypeCasting{
 		intValue=character;
 		System.out.println("character and intValue " + character + " " + intValue);
 		System.out.println("Int to char");
-		intValue=100;
+		intValue=1000000000;
 		character=(char)intValue;
 		System.out.println("intValue and character " + intValue + " " + character);
 

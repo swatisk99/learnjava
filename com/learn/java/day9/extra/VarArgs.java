@@ -21,6 +21,7 @@ public class VarArgs {
 		}
 		System.out.println("Sum of elements in array = "+findSum(array));
 		
+		System.out.println("Sum of 2,4,2,4,5,63,8,55,77 = "+findSum(2,4,2,4,5,63,8,55,77));
 	}
 
 }

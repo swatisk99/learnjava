@@ -1,7 +1,8 @@
 package com.learn.java.intro;
+
 import java.io.IOException;
 
-class HelloWorld{
+public class HelloWorld{
 	public static void main(String args[]) throws IOException{
 		 
 		 System.out.println("Hello world \\\\n  \uD83D\uDE0A");

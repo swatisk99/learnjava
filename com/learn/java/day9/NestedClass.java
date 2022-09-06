@@ -1,35 +1,45 @@
 package com.learn.java.day9;
 
-class Nest{
+class Outer{
 	int value_out = 10;
 	void printValue() {
 		System.out.println("This is Nest class..\nvalue of variable in Nest Class = "+value_out);
 	}
 	void callNested() {
 		System.out.println("Calling Nested Class...\n...");
-		Nested nestedClass = new Nested();
+		Inner nestedClass = new Inner();
 		nestedClass.print();
 	}
-	class Nested{
+	
+	/**
+	 * non static nested class
+	 * @author swati-15154
+	 *
+	 */
+	class Inner{
 		int value_in = 14;
 		void print() {
-			System.out.println("\nThis is Nested class..\nvalue of variable in Nest Class = "+value_out+"\nvalue of variable in nested class = "+value_in);	
+			System.out.println("\nThis is an Inner class..\nvalue of variable in Nest Class = "+value_out+"\nvalue of variable in nested class = "+value_in);	
 		}
 	}
+	
+	/**
+	 * creating class within method
+	 */
 	void createNestedClass() {
 		System.out.println("\nThis is a Nest class method...\nWill be creating another nested class...");
-		class NestedInMethod{
+		class Nested{
 			int value = 17;
 			void printValue() {
 				System.out.println("Nested class created...Value of variable = "+value);
 			}
 		}
-		NestedInMethod newNest = new NestedInMethod();
+		Nested newNest = new Nested();
 		newNest.printValue();
 	}
 	//value_in cannot be resolved to a variable
 	/**void print() {
-		System.out.println("This is Nest class..\nvalue of variable in Nested Class = "+value_in);
+		System.out.println("This is Nest class..\nvalue of variable in Inner Class = "+value_in);
 	}
 	**/
 }
@@ -37,16 +47,14 @@ class Nest{
 public class NestedClass {
 
 	public static void main(String[] args) {
-		Nest n = new Nest();
-		n.printValue();
-		n.callNested();
-		System.out.println("\nCalling nested class from main..");
-		Nest.Nested nested=n.new Nested(); 
+		Outer out = new Outer();
+		out.printValue();
+		out.callNested();
+		System.out.println("\nCalling inner class from main..");
+		
+		Outer.Inner nested=out.new Inner(); 
 		nested.print();
 		
-		n.createNestedClass();
-		
-		
+		out.createNestedClass();
 	}
-
 }
