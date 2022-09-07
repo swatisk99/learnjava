@@ -5,11 +5,14 @@ public class OutOfMemory {
 	public static void doNothing() {
 		System.out.println(value++);
 		doNothing();
+		
 	}
+	
 	public static void main(String[] args) {
 		while(value>=0) {
 			System.out.println(value++);
-			doNothing();		}	
+			doNothing();
+		}	
 		
 	}
 	
