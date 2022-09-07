@@ -22,6 +22,7 @@ class Outer{
 			System.out.println("\nThis is an Inner class..\nvalue of variable in Nest Class = "+value_out+"\nvalue of variable in nested class = "+value_in);	
 		}
 	}
+
 	
 	/**
 	 * creating class within method
@@ -37,11 +38,13 @@ class Outer{
 		Nested newNest = new Nested();
 		newNest.printValue();
 	}
+	
 	//value_in cannot be resolved to a variable
 	/**void print() {
 		System.out.println("This is Nest class..\nvalue of variable in Inner Class = "+value_in);
 	}
 	**/
+	
 }
 
 public class NestedClass {
@@ -52,9 +55,9 @@ public class NestedClass {
 		out.callNested();
 		System.out.println("\nCalling inner class from main..");
 		
-		Outer.Inner nested=out.new Inner(); 
-		nested.print();
+		Outer.Inner nested = out.new Inner(); 
 		
-		out.createNestedClass();
-	}
+		
+		out.createNestedClass();		
+	} 
 }
