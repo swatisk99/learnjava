@@ -39,19 +39,30 @@ public class ObjectArray {
 		System.out.println("Enter number of students : ");
 		Scanner scan = new Scanner(System.in);
 		int size = scan.nextInt();
-		StudentDetails[] students = new StudentDetails[size];
-		for(int i=0;i<size;i++) {
-			scan.nextLine();
-			System.out.println("Name : ");
-			StringBuilder name = new StringBuilder(scan.nextLine());
-			System.out.println("ID : ");
-			long id = scan.nextLong();
-			System.out.println("Gender (M/F/O) : ");
-			char gender = scan.next().charAt(0);
-			students[i] = new  StudentDetails(name,id,gender);
-		}scan.nextLine();
+		StudentDetails[] students = createStudentRecords(size);
+		scan.nextLine();
 		System.out.println("Enter name of student to obtain data");
 		StringBuilder studentName = new StringBuilder(scan.nextLine());
+		findStudentRecord(students,studentName,size);
+		
+
+	}
+	static StudentDetails[] createStudentRecords(int size) {
+		Scanner scan = new Scanner(System.in);
+		StudentDetails[] students = new StudentDetails[size];
+		for(int i=0;i<size;i++) {
+			System.out.print("Name : ");
+			StringBuilder name = new StringBuilder(scan.nextLine());
+			System.out.print("ID : ");
+			long id = scan.nextLong();
+			System.out.print("Gender (M/F/O) : ");
+			char gender = scan.next().charAt(0);
+			students[i] = new  StudentDetails(name,id,gender);
+		}
+		return students;
+	}
+	
+	static void findStudentRecord(StudentDetails[] students,StringBuilder studentName,long size) {
 		for(int i=0;i<size;i++) {
 			if(students[i].equals(students[i].name,studentName)) {
 				System.out.println("Name : "+students[i].name);
@@ -62,6 +73,5 @@ public class ObjectArray {
 				System.out.println("No Such Record exists");
 			}
 		}
-
 	}
 }
