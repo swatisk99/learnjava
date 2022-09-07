@@ -5,7 +5,8 @@ public class StringOperations {
 	static void getTitleCase(String str) {
 		int i=0;
 		String newString=new String();
-		while(i<str.length())
+		long stringLength = str.length();
+		while(i<stringLength)
 		{	if((i==0)||(str.charAt(i-1)==' ')) {
 				if((str.charAt(i)>=97)&&(str.charAt(i)<=122))
 					newString=newString+(char)(str.charAt(i)-32);
@@ -25,7 +26,8 @@ public class StringOperations {
 	public static StringBuilder getUpperCase(StringBuilder name1) {
 		int i=0;
 		StringBuilder strb = new StringBuilder();
-		while(i<name1.length())
+		long nameLength = name1.length();
+		while(i<nameLength)
 		{	if((name1.charAt(i)>=97)&&(name1.charAt(i)<=122))
 					strb.append((char)(name1.charAt(i)-32));
 			else
@@ -38,7 +40,8 @@ public class StringOperations {
 	static void getLowerCase(String str) {
 		int i=0;
 		String newString=new String();
-		while(i<str.length())
+		long stringLength = str.length();
+		while(i<stringLength)
 		{	if((str.charAt(i)>=65)&&(str.charAt(i)<=90))
 					newString=newString+(char)(str.charAt(i)+32);
 			else
@@ -51,7 +54,8 @@ public class StringOperations {
 	static void getSentenceCase(String str) {
 		int i=0;
 		String newString=new String();
-		while(i<str.length())
+		long stringLength = str.length();
+		while(i<stringLength)
 		{	if((i==0)||(str.charAt(i-1)=='.')){
 				if((str.charAt(i)>=97)&&(str.charAt(i)<=122))
 					newString=newString+(char)(str.charAt(i)-32);
