@@ -1,6 +1,10 @@
 package com.learn.java.day9;
 class Shape{
 	private double length,breadth,height;
+	Shape(){}
+	Shape(double l){
+		length = breadth = height = l;
+	}
 	void setDimensions(double length) {
 		this.length = this.breadth = this.height = length;
 	}
@@ -23,12 +27,16 @@ public class CubeOrCuboid {
 		Shape cube = new Shape();
 		cube.setDimensions(22.5);
 		//System.out.println(cube.length);  ==>  The field Shape.length is not visible
-		System.out.println("Volume of cube : "+cube.getVolume());
+		System.out.println("\nVolume of cube : "+cube.getVolume());
 		cube.getDimensions();
 		Shape cuboid = new Shape();
 		cuboid.setDimensions(10,15,15.5);
-		System.out.println("Volume of cuboid : "+cuboid.getVolume());
+		System.out.println("\nVolume of cuboid : "+cuboid.getVolume());
 		cuboid.getDimensions();
+		
+		Shape mycube = new Shape(10);
+		System.out.println("\nVolume of cube : "+mycube.getVolume());
+		mycube.getDimensions();
 	}
 
 }
