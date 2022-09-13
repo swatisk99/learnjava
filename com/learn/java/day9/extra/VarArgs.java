@@ -3,6 +3,10 @@ package com.learn.java.day9.extra;
 import java.util.Scanner;
 
 public class VarArgs {
+	/**int value;
+	VarArgs(){
+		this.value = 5;
+	}**/
 	static double findSum(double ... array) {
 		double sum=0;
 		for(double i:array) {

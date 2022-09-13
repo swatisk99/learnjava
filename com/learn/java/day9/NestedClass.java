@@ -48,15 +48,17 @@ class Outer{
 }
 
 public class NestedClass {
-
+	
 	public static void main(String[] args) {
 		Outer out = new Outer();
 		out.printValue();
 		out.callNested();
 		System.out.println("\nCalling inner class from main..");
 		
-		Outer.Inner nested = out.new Inner(); 
-		
+		Outer.Inner nested= out.new Inner() ; 
+		System.out.println("created an object for inner class : "+nested);
+		nested = null;
+		System.out.println("After assigning null to Inner class object : "+nested);
 		
 		out.createNestedClass();		
 	} 

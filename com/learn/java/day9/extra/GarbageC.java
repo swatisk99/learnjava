@@ -8,13 +8,10 @@ public class GarbageC {
 		VarArgs w = new VarArgs();
 		System.out.println(w.findSum(90-2));
 		
-		//v=null;
+		v=null;w=null;
 		int i=0,j;
 		while(i++<1000000) 
 		{	j=0;
-			if(i%100000==0) {
-				System.out.print(i+" ");
-			}
 			while(j++<10000) {}
 		}
 		System.gc();
