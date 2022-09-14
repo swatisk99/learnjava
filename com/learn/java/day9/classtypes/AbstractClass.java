@@ -7,6 +7,7 @@ abstract class Student{
 	abstract void printDetails();
 }
 
+//Concrete class
 class StudentDetails extends Student{
 	//implementation of abstract methods are given here
 	void printDetails(){
