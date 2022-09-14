@@ -1,6 +1,24 @@
 package com.learn.java.day4;
 import java.util.*;
+
+import com.learn.java.day8.SortArray;
+
+
 public class Denominations {
+	static long[] getDistinctNotesArray(int distinctNotes) {
+		Scanner sc=new Scanner(System.in);
+		long[] notes = new long [distinctNotes];
+		System.out.println("Enter the notes");
+		for(int i=0;i<distinctNotes;i++) {
+			notes[i]=sc.nextInt();
+		}
+		return SortArray.getDescendingOrder(notes);
+	}
+	
+	/**
+	 * if the denominations were fixed, use this function
+	 * @param rupees
+	 */
 	static void getDenominations(int rupees) {
 		int denominations,balance;
 		denominations=rupees/2000;
@@ -21,16 +39,45 @@ public class Denominations {
 		System.out.println("1 X "+balance+"\t= "+balance+"\n-------------\nTotal\t= "+rupees);
 	}
 	
+	/**
+	 * When the user defines the number of distinct notes
+	 * @param rupees
+	 * @param notes
+	 */
+	static void getDenominations(int rupees,long [] notes){
+		HashMap<Long,Long> NumberOfNotes = new HashMap<>();
+		int distinctNotes=notes.length;
+		for(int i=0;i<distinctNotes;i++) {
+			NumberOfNotes.put(notes[i], rupees/notes[i]);
+			rupees-=(notes[i]*(rupees/notes[i]));
+		}
+		long hashmapSize = NumberOfNotes.size();
+		long denomination;
+		for(Long i : NumberOfNotes.keySet()) {
+			denomination = NumberOfNotes.get(i);
+			System.out.println(i+"\tX\t"+denomination+"\t= "+(i*denomination));
+		}
+		System.out.println(NumberOfNotes);
+	}
+	
+	
 	public static void main(String[] args) {
 		//rupees to denominations
 		Scanner sc=new Scanner(System.in);
 		System.out.print("Rupees\t: ");
-		int rupees,denominations;
+		int rupees;
 		rupees=sc.nextInt();
+		System.out.println("Finding rupees when notes are fixed : ");
 		getDenominations(rupees);
 		
+		System.out.println("\nWhen notes are given by user : ");
+		System.out.print("Enter number of distinct notes : ");
+		int distinctNotes = sc.nextInt();
+		getDenominations(rupees,getDistinctNotesArray(distinctNotes));
+		
 	
-		//denominations to rupees
+/**		//denominations to rupees
+		int denominations;
 		System.out.println("\n\nEnter the denominations");
 		System.out.print("2000 = ");
 		denominations=sc.nextInt();
@@ -48,6 +95,7 @@ public class Denominations {
 		denominations=sc.nextInt();
 		rupees+=denominations*50;
 		System.out.print("Rs. "+rupees);	
+**/
 	}
 
 }

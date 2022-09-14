@@ -2,7 +2,7 @@ package com.learn.java.day8;
 import java.util.Scanner;
 
 public class SortArray {
-	public static long[] getAscendingOrder(long array[]) {
+	public static long[] getAscendingOrder(long[] array) {
 		int size=array.length,position,index;
 		long swapElement;
 		for(int iterations=0;iterations<size;iterations++) {
