@@ -51,7 +51,6 @@ public class Denominations {
 			NumberOfNotes.put(notes[i], rupees/notes[i]);
 			rupees-=(notes[i]*(rupees/notes[i]));
 		}
-		long hashmapSize = NumberOfNotes.size();
 		long denomination;
 		for(Long i : NumberOfNotes.keySet()) {
 			denomination = NumberOfNotes.get(i);
