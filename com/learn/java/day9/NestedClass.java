@@ -55,6 +55,12 @@ public class NestedClass {
 		out.callNested();
 		System.out.println("\nCalling inner class from main..");
 		
+		/**
+		 *	No enclosing instance of type Outer is accessible. 
+		 *	Must qualify the allocation with an enclosing instance of type Outer. 
+		 *	(e.g. x.new A() where x is an instance of Outer) 
+		 **/
+		//Outer.Inner nested= new Outer.Inner() ;
 		Outer.Inner nested= out.new Inner() ; 
 		System.out.println("created an object for inner class : "+nested);
 		nested = null;
