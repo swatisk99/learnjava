@@ -38,12 +38,25 @@ class Outer{
 		Nested newNest = new Nested();
 		newNest.printValue();
 	}
-	
 	//value_in cannot be resolved to a variable
+	
 	/**void print() {
 		System.out.println("This is Nest class..\nvalue of variable in Inner Class = "+value_in);
 	}
 	**/
+	
+	/**
+	 * Creating nested static class
+	 */
+	static class StaticClass{
+		int d=4;
+		void test() {
+			System.out.println(d);
+		}
+		static void testing() {
+			System.out.println("another static method");
+		}
+	}
 	
 }
 
@@ -66,6 +79,12 @@ public class NestedClass {
 		nested = null;
 		System.out.println("After assigning null to Inner class object : "+nested);
 		
-		out.createNestedClass();		
+		out.createNestedClass();	
+		
+		//calling static method from nested static
+		Outer.StaticClass.testing();
+		//calling non static method from nested static class
+		Outer.StaticClass sC = new Outer.StaticClass();
+		sC.test();
 	} 
 }
