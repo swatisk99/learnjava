@@ -3,7 +3,7 @@ package com.learn.java.day9;
 public class StaticMethods {
 	static int variable = 5;
 	int variable2 = 10;
-	final int finalVar= 5;
+	final int FINAL_VAR= 5;
 	static void display() {
 		System.out.println("\nIn static method display..\nStatic variable = "+variable);
 		/**
@@ -25,7 +25,7 @@ public class StaticMethods {
 		display();
 		
 		
-		//System.out.println(staticMethods.finalVar++); ==> Unresolved compilation problem : The final field StaticMethods.finalVar cannot be assigned
+		//System.out.println(staticMethods.FINAL_VAR++); ==> Unresolved compilation problem : The final field StaticMethods.finalVar cannot be assigned
 	}
 
 }
