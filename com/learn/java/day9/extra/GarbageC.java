@@ -1,5 +1,7 @@
 package com.learn.java.day9.extra;
 
+import java.util.Scanner;
+
 public class GarbageC {
 
 	public static void main(String[] args) {
@@ -16,7 +18,6 @@ public class GarbageC {
 		}
 		System.gc();
 		System.out.println("..");
-		System.out.println(v.findSum(1,1));
 	}
 	/**protected void finalize() {
 		System.out.println("Entered finalize method");

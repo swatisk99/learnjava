@@ -34,7 +34,7 @@ class Singleton{
 		System.out.println("System ID : "+systemID);
 	}
 }
-public class SingletonClass {
+class SingletonClass {
 
 	public static void main(String[] args) {
 		Singleton s = Singleton.getObject();
@@ -42,7 +42,7 @@ public class SingletonClass {
 		s.setID(155555);
 		Singleton t = Singleton.getObject();
 		t.getSystemID();
-		System.out.println("First object == second object? :"+(t==s));
+		System.out.println("First object == second object? :"+s.equals(t));
 	}
 
 }

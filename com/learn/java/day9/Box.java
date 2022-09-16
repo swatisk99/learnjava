@@ -6,6 +6,7 @@ public class Box{
 	private String bname;
 	
 	public String name;
+	private Box() {}
 	Box(int b,int c){
 		this.b=b;
 		this.c=c;
@@ -27,7 +28,4 @@ public class Box{
 		this.bname="Krishna";
 	}
 	
-	long getProduct() {
-		return b*c;
-	}
 }

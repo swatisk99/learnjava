@@ -3,11 +3,11 @@ package com.learn.java.day9;
 import java.util.Scanner;
 
 public class Factorial {
-	static long getFactorial(int n) {
-		if(n==1) {
+	static long getFactorial(int number) {
+		if(number==0) {
 			return 1;
 		}
-		return getFactorial(n-1)*n;
+		return getFactorial(number-1)*number;
 	}
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);

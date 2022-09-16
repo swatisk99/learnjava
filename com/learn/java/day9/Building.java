@@ -32,7 +32,8 @@ public class Building {
 		room1.temperature=scan.nextFloat();
 		System.out.println("Enter floor length: ");
 		System.out.println("Area of room : "+room1.findArea());
-		
+		System.out.println(Room.findPrice(room1));
+		scan.close();
 	}
 
 }
@@ -47,8 +48,13 @@ class Room{
 		this.width=width;
 		this.height=height;
 	}
+	//can refer to instance variables directly
 	double findArea () {
-		return length*width*height;
+		return length*width;
+	}
+	
+	static double findPrice(Room obj) {
+		return obj.findArea()*2.5;
 	}
 	
 	

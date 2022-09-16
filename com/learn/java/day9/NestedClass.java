@@ -41,7 +41,7 @@ class Outer{
 	//value_in cannot be resolved to a variable
 	
 	/**void print() {
-		System.out.println("This is Nest class..\nvalue of variable in Inner Class = "+value_in);
+		System.out.println("This is Nest class.. value of variable in Inner Class = "+value_in);
 	}
 	**/
 	
@@ -60,7 +60,7 @@ class Outer{
 	
 }
 
-public class NestedClass {
+class NestedClass {
 	
 	public static void main(String[] args) {
 		Outer out = new Outer();
