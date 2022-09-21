@@ -14,18 +14,19 @@ public class StaticMethods {
 		System.out.println("This is a static initialization block");
 	}
 	void print() {
+		
+			System.out.println("hi");
+
 		System.out.println("\nIn non-static method print...\nStatic variable ="+variable+"\nNon-static variable = "+variable2);
 	}
 	public static void main(String[] args) {
 		//print();  Cannot make a static reference to the non-static method print() from the type StaticMethods
-		
 		StaticMethods staticMethods = new StaticMethods();
 		staticMethods.print();
-		
 		display();
 		
 		
 		//System.out.println(staticMethods.FINAL_VAR++); ==> Unresolved compilation problem : The final field StaticMethods.finalVar cannot be assigned
 	}
-
+ 
 }

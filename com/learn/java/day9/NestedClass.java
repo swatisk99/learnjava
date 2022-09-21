@@ -76,8 +76,8 @@ class NestedClass {
 		//Outer.Inner nested= new Outer.Inner() ;
 		Outer.Inner nested= out.new Inner() ; 
 		System.out.println("created an object for inner class : "+nested);
-		nested = null;
-		System.out.println("After assigning null to Inner class object : "+nested);
+		//nested = null;
+		//System.out.println("After assigning null to Inner class object : "+nested);
 		
 		out.createNestedClass();	
 		
