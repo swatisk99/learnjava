@@ -48,7 +48,7 @@ class VarArgs {
 	}
 }
 class Test{
-	public static void main(String[] args) {
+	public static void main(String ... args) {
 		System.out.println("Enter number of elements to find sum");
 		Scanner scan = new Scanner(System.in);
 		int size = scan.nextInt();

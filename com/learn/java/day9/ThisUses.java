@@ -6,7 +6,6 @@ class This{
 	boolean isTrue;
 	char character;
 	float fvalue;
-	
 	This(){
 		//this(2);		==>Calling parameterized constructor from default constructor
 	}
@@ -29,9 +28,11 @@ class This{
 		//this.displayThis(); == displayThis();
 		
 	}
+	
 	void createClone() {
 		This object = new This(this);
 		System.out.println("Objects after cloning : "+object+"\t"+this);
+		
 	}
 	
 }
@@ -42,15 +43,13 @@ class ThisUses {
 		This obj1 = new This();
 		System.out.println("Default values of different datatypes : ");
 		obj1.displayThis();
-		
 		This obj2 = new This(12);
 		obj2.displayThis();
 		obj1.show(obj2);
 		
 		obj2.createClone();
 		//System.out.println(obj2);
-		
-		
+	
 	}
 
 }

@@ -16,10 +16,16 @@ class Outer{
 	 * @author swati-15154
 	 *
 	 */
-	class Inner{
+	public class Inner{
 		int value_in = 14;
 		void print() {
 			System.out.println("\nThis is an Inner class..\nvalue of variable in Nest Class = "+value_out+"\nvalue of variable in nested class = "+value_in);	
+		}
+		class InnerMost{
+			int innermostValue = 17;
+			void print() {
+				System.out.println("\nThis is an Inner class in another inner class..\nvalue of variable in Nest Class = "+value_out+"\nvalue of variable in Inner class = "+value_in+"\nvalue of variable in Innermost class = "+innermostValue);	
+			}
 		}
 	}
 
@@ -79,7 +85,13 @@ class NestedClass {
 		//nested = null;
 		//System.out.println("After assigning null to Inner class object : "+nested);
 		
+		Outer.Inner.InnerMost innermostNested = nested.new InnerMost();
+		innermostNested.print();
+		System.out.println("created an object for innermost class : "+innermostNested+"\n\n");
+		
+		
 		out.createNestedClass();	
+		
 		
 		//calling static method from nested static
 		Outer.StaticClass.testing();
