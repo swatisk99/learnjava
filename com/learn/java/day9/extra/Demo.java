@@ -19,6 +19,9 @@ class A{
 	 void printMessage() {
 		System.out.println("This is not a final method in A");
 	}
+	 void overloadMethod(char character) {
+		 System.out.println("character");
+	 }
 }
 
 class B extends A{
@@ -40,7 +43,9 @@ class B extends A{
 		//super.displayMessage();
 	}
 	 
-	
+	 void overloadMethod(int character) {
+		 System.out.println("Integer");
+	 }
 	final void printMessage() {
 		System.out.println("This is a final method in B");
 	}
@@ -50,9 +55,7 @@ class B extends A{
 class Demo {
 
 	public static void main(String[] args) {
-		
 		System.out.println(D.value);
-		
 		
 		D objD = new D();
 		
@@ -63,13 +66,15 @@ class Demo {
 		B objB = new B();
 		objB.callsAnotherMethod();
 		System.out.println();
-
+		
 		objD.callsAnotherMethod();
 		System.out.println();
 		
 		objA.printMessage();
 		objB.printMessage();
 		objD.printMessage();
+		
+		 objB.overloadMethod('a');
 		
 	
 	}

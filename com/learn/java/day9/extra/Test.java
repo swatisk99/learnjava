@@ -19,6 +19,15 @@ class VarArgs {
 		return a+b;
 	}
 	
+	double findSum(byte a,double ... array) {
+		double sum=0;
+		for(double i:array) {
+			sum+=i;
+		}
+		System.out.println("this one");
+		return sum;
+	}
+	
 	/**
 	 * Overloading methods with variable number of characters
 	 * @param array
@@ -66,7 +75,7 @@ class Test{
 		//The method findSum(double[]) is ambiguous for the type VarArgs
 		//System.out.println("Sum of a,b,c,d,e,f = "+v.findSum('a','b','c','d','e','f'));
 		System.out.println("Sum of elements in array = "+v.findSum(1.789987,2.79879));
-
+		
 	}
 	
 }
