@@ -2,9 +2,7 @@ package com.learn.java.day9.extra;
 
 public class D extends B{
 	D(){
-		System.out.println("hi1");
 		{	System.out.println("hi");	}
-		System.out.println("hi2");
 	}
 	{
 		System.out.println("non static block outside constructor in class D");
@@ -18,11 +16,13 @@ public class D extends B{
 	void callsAnotherMethod() {
 		System.out.println("This is first method of D--->Calling next method...");
 		displayMessage();
-		this.displayMessage();
-		super.displayMessage();
+		//this.displayMessage();
+		//super.displayMessage();
+		super.callsAnotherMethod();
+
 
 	}
-	
+
 	
 	public void displayMessage() {
 		System.out.println("This is the second method in class D. This method was called by the first method");

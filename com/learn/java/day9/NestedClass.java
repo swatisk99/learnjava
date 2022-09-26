@@ -72,15 +72,26 @@ class Outer{
 	 */
 	static class StaticClass{
 		int d;
-		void test(int e) {
-			d=d+e;
+		
+		void test() {
 			System.out.println(d);
+			//System.out.println(new Outer().value_out);
 		}
 		static void testing() {
 			System.out.println("another static method");
-		}
-		
+			StaticClass sc= new StaticClass() {
+				void test() {
+					System.out.println("this is an anonymous inner class in static nested class");
+					super.test();
+				}
+				{
+					System.out.println("hi");
+				}
+			};
+			sc.test();
+		}	
 	}
+	
 }
 
 class NestedClass {
@@ -114,7 +125,7 @@ class NestedClass {
 				
 		//calling non static method from nested static class
 		StaticClass staticClass = new StaticClass();
-		staticClass.test(4);
+		staticClass.test();
 		//calling static method from nested static
 		Outer.StaticClass.testing();
 	} 
