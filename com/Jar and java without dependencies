@@ -1,0 +1,769 @@
+Last login: Mon Oct  3 10:25:08 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+export PS1='\u@\H:\w$ '
+swati-15154:~ swati-15154$ export PS1='\u@\H:\w$ '
+swati-15154@swati-15154:~$ cd documents/learnjava
+swati-15154@swati-15154:~/documents/learnjava$ cd learnjava
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git add com/learn/java/day9/extra/FirstClass.java
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git add com/learn/java/day9/extra/SecondClass.java
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git add com/learn/java/day9/extra/ThirdClass.java
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git add com/learn/java/day9/extra/FourthClass.java
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git commit -m "import static"
+[master 500177e] import static
+ 4 files changed, 39 insertions(+)
+ create mode 100644 com/learn/java/day9/extra/FirstClass.java
+ create mode 100644 com/learn/java/day9/extra/FourthClass.java
+ create mode 100644 com/learn/java/day9/extra/SecondClass.java
+ create mode 100644 com/learn/java/day9/extra/ThirdClass.java
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git push -u origin master
+warning: invalid credential line: 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
+Username for 'https://github.com': swatisk99
+Enumerating objects: 17, done.
+Counting objects: 100% (17/17), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (11/11), 1.16 KiB | 1.16 MiB/s, done.
+Total 11 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+To https://github.com/swatisk99/learnjava
+   c471885..500177e  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git add com/learn/java/day9/Jar without dependencies
+fatal: pathspec 'com/learn/java/day9/Jar' did not match any files
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git add com/learn/java/day9/Jar without dependencies.png
+fatal: pathspec 'com/learn/java/day9/Jar' did not match any files
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git add com/learn/java/day9/'Jar without dependencies'.png
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   com/learn/java/day9/Jar without dependencies.png
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   com/learn/java/day9/AbstractConcrete.java
+	modified:   com/learn/java/day9/AccessSpecifiers.java
+	modified:   com/learn/java/day9/Methods.java
+	modified:   com/learn/java/day9/NestedClass.java
+	modified:   com/learn/java/day9/StaticMethods.java
+	modified:   com/learn/java/day9/classtypes/AbstractClass.java
+	modified:   com/learn/java/day9/classtypes/FinalClass.java
+	modified:   com/learn/java/day9/classtypes/StudentAbstract.java
+	modified:   com/learn/java/day9/extra/D.java
+	modified:   com/learn/java/day9/extra/Demo.java
+	modified:   com/learn/java/day9/extra/Final.java
+	modified:   com/learn/java/day9/extra/ObjectArray.java
+	modified:   com/learn/java/day9/extra/Test.java
+	modified:   com/learn/java/day9/extra/ThirdClass.java
+	modified:   com/learn/java/intro/HelloWorld.java
+	modified:   com/learn/java/intro/ObjectToByte.java
+	modified:   com/learn/java/jarfiles/JARA/learnjar/First.java
+	modified:   com/learn/java/jarfiles/JARB/src/learningjar/Second.java
+	modified:   com/learn/java/jarfiles/JARC/src/learnjarc/ThirdLib.java
+	modified:   com/learn/java/jarfiles/JARD/src/learnjar/LibraryType.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.project
+	com/learn/java/day10/
+	com/learn/java/day9/OuterClass.java
+	com/learn/java/day9/extra/DemoClass.java
+	com/learn/java/day9/extra/Extra.java
+	com/learn/java/day9/extra/Main.java
+	com/learn/java/day9/extra/Overloading.java
+	com/learn/java/day9/extra/Trial.java
+	com/learn/java/jarfiles/JARA/.classpath
+	com/learn/java/jarfiles/JARA/.project
+	com/learn/java/jarfiles/JARA/learnjar/First.class
+	com/learn/java/jarfiles/JARB/.classpath
+	com/learn/java/jarfiles/JARB/.project
+	com/learn/java/jarfiles/JARC/.classpath
+	com/learn/java/jarfiles/JARC/.project
+	com/learn/java/jarfiles/JARD/.classpath
+	com/learn/java/jarfiles/JARD/.project
+
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git add com/learn/java/day9/extra/ObjectToByte.java
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git commit -m "transient keyword"
+[master 63f0d00] transient keyword
+ 2 files changed, 6 insertions(+), 3 deletions(-)
+ create mode 100644 com/learn/java/day9/Jar without dependencies.png
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git push -u origin master
+warning: invalid credential line: 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
+Username for 'https://github.com': swatisk99
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 230.83 KiB | 23.08 MiB/s, done.
+Total 9 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To https://github.com/swatisk99/learnjava
+   500177e..63f0d00  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git add com/learn/java/day10/ObjectOverride.java
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git commit -m "Object.class"
+[master 1975d4a] Object.class
+ 1 file changed, 87 insertions(+)
+ create mode 100644 com/learn/java/day10/ObjectOverride.java
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ git push -u origin master
+warning: invalid credential line: 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
+Username for 'https://github.com': swatisk99
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (7/7), 1.30 KiB | 1.30 MiB/s, done.
+Total 7 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/swatisk99/learnjava
+   63f0d00..1975d4a  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+swati-15154@swati-15154:~/documents/learnjava/learnjava$ cd ..
+swati-15154@swati-15154:~/documents/learnjava$ cd ..
+swati-15154@swati-15154:~/documents$ jar xf First.jar
+swati-15154@swati-15154:~/documents$ open .
+swati-15154@swati-15154:~/documents$ 
+  [Restored 04-Oct-2022 at 3:22:30 PM]
+Last login: Tue Oct  4 15:22:27 on console
+export PS1='\u@\H:\w$ '
+Restored session: Mon Oct  3 19:18:40 IST 2022
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+swati-15154:documents swati-15154$ export PS1='\u@\H:\w$ '
+swati-15154@swati-15154:~/documents$ ls
+'
+File1.class
+File1.java
+File2.class
+File2.java
+File3.class
+Jarfile.jar
+MANIFEST.MF
+META-INF
+ObjectSizeFetcher.java
+One.class
+One.java
+Swati's dictionary.txt
+Terminal Saved Output
+Terminal Saved Output08:08
+Terminal Saved Output1.1 0808 
+Two.java
+bin
+eclipse-java-2022-06-R-macosx-cocoa-x86_64.dmg
+git 1.2
+github push files
+learningjar
+learnjar
+learnjava
+learnjava1
+open ecliopse by cmd
+org
+src
+ss
+swati-15154@swati-15154:~/documents$ vi Two.java
+swati-15154@swati-15154:~/documents$ javac -cp .:/Jarfile.jar Two.java
+Two.java:2: error: '.' expected
+import Jarfile;
+              ^
+Two.java:2: error: ';' expected
+import Jarfile;
+               ^
+2 errors
+swati-15154@swati-15154:~/documents$ vi Two.java
+swati-15154@swati-15154:~/documents$ javac -cp .:/Jarfile.jar Two.java
+Two.java:2: error: class, interface, or enum expected
+package Documents;
+^
+Two.java:3: error: '.' expected
+import Jarfile;
+              ^
+Two.java:3: error: ';' expected
+import Jarfile;
+               ^
+3 errors
+swati-15154@swati-15154:~/documents$ vi Two.java
+swati-15154@swati-15154:~/documents$ vi Two.java
+swati-15154@swati-15154:~/documents$ javac -cp .:/Jarfile.jar Two.java
+Two.java:3: error: '.' expected
+import Jarfile;
+              ^
+Two.java:3: error: ';' expected
+import Jarfile;
+               ^
+2 errors
+swati-15154@swati-15154:~/documents$ javac -cp .:/Jarfile.jar Two.java
+Two.java:3: error: '.' expected
+import Jarfile;
+              ^
+Two.java:3: error: ';' expected
+import Jarfile;
+               ^
+2 errors
+swati-15154@swati-15154:~/documents$ vi Two.java
+swati-15154@swati-15154:~/documents$ javac -cp .:/Jarfile.jar Two.java
+Two.java:1: error: package Jarfile does not exist
+import Jarfile.One;
+              ^
+Two.java:5: error: cannot access One
+		One.printStatement();
+		^
+  bad source file: ./One.java
+    file does not contain class One
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+2 errors
+swati-15154@swati-15154:~/documents$ ls -a
+'
+.
+..
+.DS_Store
+.bash_profile
+.classpath
+.localized
+.project
+File1.class
+File1.java
+File2.class
+File2.java
+File3.class
+Jarfile.jar
+MANIFEST.MF
+META-INF
+ObjectSizeFetcher.java
+One.class
+One.java
+Swati's dictionary.txt
+Terminal Saved Output
+Terminal Saved Output08:08
+Terminal Saved Output1.1 0808 
+Two.java
+bin
+eclipse-java-2022-06-R-macosx-cocoa-x86_64.dmg
+git 1.2
+github push files
+learningjar
+learnjar
+learnjava
+learnjava1
+open ecliopse by cmd
+org
+src
+ss
+swati-15154@swati-15154:~/documents$ cd Jarfile.jar
+-bash: cd: Jarfile.jar: Not a directory
+swati-15154@swati-15154:~/documents$ ./Jarfile.jar
+-bash: ./Jarfile.jar: Permission denied
+swati-15154@swati-15154:~/documents$ javac -cp .:/Jarfile.jar Two.java
+Two.java:1: error: package Jarfile does not exist
+import Jarfile.One;
+              ^
+Two.java:5: error: cannot access One
+		One.printStatement();
+		^
+  bad source file: ./One.java
+    file does not contain class One
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+2 errors
+swati-15154@swati-15154:~/documents$ javac -cp ./Jarfile.jar Two.java
+Two.java:1: error: package Jarfile does not exist
+import Jarfile.One;
+              ^
+Two.java:5: error: cannot access One
+		One.printStatement();
+		^
+  bad class file: ./Jarfile.jar(One.class)
+    class file contains wrong class: Documents.One
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+2 errors
+swati-15154@swati-15154:~/documents$ vi Two.java
+swati-15154@swati-15154:~/documents$ javac -cp ./Jarfile.jar Two.java
+Two.java:1: error: package Jarfile does not exist
+import Jarfile.*;
+^
+Two.java:5: error: cannot access One
+		One.printStatement();
+		^
+  bad class file: ./Jarfile.jar(One.class)
+    class file contains wrong class: Documents.One
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+2 errors
+swati-15154@swati-15154:~/documents$ ls
+'
+File1.class
+File1.java
+File2.class
+File2.java
+File3.class
+Jarfile.jar
+MANIFEST.MF
+META-INF
+ObjectSizeFetcher.java
+One.class
+One.java
+Swati's dictionary.txt
+Terminal Saved Output
+Terminal Saved Output08:08
+Terminal Saved Output1.1 0808 
+Two.java
+bin
+eclipse-java-2022-06-R-macosx-cocoa-x86_64.dmg
+git 1.2
+github push files
+learningjar
+learnjar
+learnjava
+learnjava1
+open ecliopse by cmd
+org
+src
+ss
+swati-15154@swati-15154:~/documents$ mkdir outputs
+swati-15154@swati-15154:~/documents$ javac -d outputs -cp ./Jarfile.jar Two.java 
+Two.java:1: error: package Jarfile does not exist
+import Jarfile.*;
+^
+Two.java:5: error: cannot access One
+		One.printStatement();
+		^
+  bad class file: ./Jarfile.jar(One.class)
+    class file contains wrong class: Documents.One
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+2 errors
+swati-15154@swati-15154:~/documents$ javac -d outputs -cp .:./Jarfile.jar Two.java
+Two.java:1: error: package Jarfile does not exist
+import Jarfile.*;
+^
+Two.java:5: error: cannot access One
+		One.printStatement();
+		^
+  bad source file: ./One.java
+    file does not contain class One
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+2 errors
+swati-15154@swati-15154:~/documents$ javac -d outputs -cp .:/Jarfile.jar Two.java
+Two.java:1: error: package Jarfile does not exist
+import Jarfile.*;
+^
+Two.java:5: error: cannot access One
+		One.printStatement();
+		^
+  bad source file: ./One.java
+    file does not contain class One
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+2 errors
+swati-15154@swati-15154:~/documents$ javac -d outputs -cp ./Documents:/Jarfile.jar Two.java
+Two.java:1: error: package Jarfile does not exist
+import Jarfile.*;
+^
+Two.java:5: error: cannot find symbol
+		One.printStatement();
+		^
+  symbol:   variable One
+  location: class Two
+2 errors
+swati-15154@swati-15154:~/documents$ javac -d outputs -cp Jarfile.jar Two.java
+Two.java:1: error: package Jarfile does not exist
+import Jarfile.*;
+^
+Two.java:5: error: cannot access One
+		One.printStatement();
+		^
+  bad class file: Jarfile.jar(One.class)
+    class file contains wrong class: Documents.One
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+2 errors
+swati-15154@swati-15154:~/documents$ vi Two.java
+swati-15154@swati-15154:~/documents$ javac -d outputs -cp Jarfile.jar Two.java
+Two.java:1: error: package Jarfile.Documents does not exist
+import Jarfile.Documents.One;
+                        ^
+Two.java:5: error: cannot access One
+		One.printStatement();
+		^
+  bad class file: Jarfile.jar(One.class)
+    class file contains wrong class: Documents.One
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+2 errors
+swati-15154@swati-15154:~/documents$ ls
+'
+File1.class
+File1.java
+File2.class
+File2.java
+File3.class
+Jarfile.jar
+MANIFEST.MF
+META-INF
+ObjectSizeFetcher.java
+One.class
+One.java
+Swati's dictionary.txt
+Terminal Saved Output
+Terminal Saved Output08:08
+Terminal Saved Output1.1 0808 
+Two.java
+bin
+eclipse-java-2022-06-R-macosx-cocoa-x86_64.dmg
+git 1.2
+github push files
+learningjar
+learnjar
+learnjava
+learnjava1
+open ecliopse by cmd
+org
+outputs
+src
+ss
+swati-15154@swati-15154:~/documents$ rm One.class
+swati-15154@swati-15154:~/documents$ javac -d outputs -cp Jarfile.jar Two.java
+Two.java:1: error: package Jarfile.Documents does not exist
+import Jarfile.Documents.One;
+                        ^
+Two.java:5: error: cannot access One
+		One.printStatement();
+		^
+  bad class file: Jarfile.jar(One.class)
+    class file contains wrong class: Documents.One
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+2 errors
+swati-15154@swati-15154:~/documents$ vi Two.java
+swati-15154@swati-15154:~/documents$ javac -d outputs -cp Jarfile.jar Two.java
+Two.java:1: error: package Jarfile does not exist
+import Jarfile.One;
+              ^
+Two.java:5: error: cannot access One
+		One.printStatement();
+		^
+  bad class file: Jarfile.jar(One.class)
+    class file contains wrong class: Documents.One
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+2 errors
+swati-15154@swati-15154:~/documents$ vi Two.java
+swati-15154@swati-15154:~/documents$ javac -d outputs -cp Jarfile.jar Two.java
+Two.java:1: error: '.' expected
+import Jarfile;
+              ^
+Two.java:1: error: ';' expected
+import Jarfile;
+               ^
+2 errors
+swati-15154@swati-15154:~/documents$ javac -d outputs -cp .:/Jarfile.jar Two.java
+Two.java:1: error: '.' expected
+import Jarfile;
+              ^
+Two.java:1: error: ';' expected
+import Jarfile;
+               ^
+2 errors
+swati-15154@swati-15154:~/documents$ vi Two.java
+swati-15154@swati-15154:~/documents$ javac -d outputs -cp .:/Jarfile.jar Two.java
+Two.java:1: error: class, interface, or enum expected
+iimport Jarfile.One;
+^
+1 error
+swati-15154@swati-15154:~/documents$ vi Two.java
+swati-15154@swati-15154:~/documents$ javac -d outputs -cp .:/Jarfile.jar Two.java
+Two.java:1: error: package Jarfile does not exist
+import Jarfile.One;
+              ^
+Two.java:5: error: cannot access One
+		One.printStatement();
+		^
+  bad source file: ./One.java
+    file does not contain class One
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+2 errors
+swati-15154@swati-15154:~/documents$ javac One.java
+swati-15154@swati-15154:~/documents$ java One
+Error: Could not find or load main class One
+swati-15154@swati-15154:~/documents$ jar cvf Jarfile.jar One.class
+added manifest
+adding: One.class(in = 392) (out= 275)(deflated 29%)
+swati-15154@swati-15154:~/documents$ javac -d outputs -cp .:/Jarfile.jar Two.java
+Two.java:1: error: package Jarfile does not exist
+import Jarfile.One;
+              ^
+Two.java:5: error: cannot access One
+		One.printStatement();
+		^
+  bad class file: ./One.class
+    class file contains wrong class: Documents.One
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+2 errors
+swati-15154@swati-15154:~/documents$ open .
+swati-15154@swati-15154:~/documents$ vi Two.java
+swati-15154@swati-15154:~/documents$ javac -d outputs -cp .:/Jarfile.jar Two.java
+Two.java:1: error: '.' expected
+import One;
+          ^
+Two.java:1: error: ';' expected
+import One;
+           ^
+2 errors
+swati-15154@swati-15154:~/documents$ 
+  [Restored 05-Oct-2022 at 10:12:41 AM]
+Last login: Wed Oct  5 10:12:38 on console
+Restored session: Wed Oct  5 03:08:22 IST 2022
+export PS1='\u@\H:\w$ '
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+swati-15154:documents swati-15154$ export PS1='\u@\H:\w$ '
+swati-15154@swati-15154:~/documents$ vi One.java
+swati-15154@swati-15154:~/documents$ ls
+'
+File1.class
+File1.java
+File2.class
+File2.java
+File3.class
+Jarfile.jar
+MANIFEST.MF
+META-INF
+ObjectSizeFetcher.java
+One.java
+Swati's dictionary.txt
+Terminal Saved Output
+Terminal Saved Output08:08
+Terminal Saved Output1.1 0808 
+Two.java
+bin
+eclipse-java-2022-06-R-macosx-cocoa-x86_64.dmg
+git 1.2
+github push files
+learningjar
+learnjar
+learnjava
+learnjava1
+open ecliopse by cmd
+org
+outputs
+src
+ss
+swati-15154@swati-15154:~/documents$ vi One.java
+swati-15154@swati-15154:~/documents$ open .
+swati-15154@swati-15154:~/documents$ vi One.java
+swati-15154@swati-15154:~/documents$ javac One.java
+swati-15154@swati-15154:~/documents$ jar cvf Jarfile.jar One.class
+added manifest
+adding: One.class(in = 382) (out= 267)(deflated 30%)
+swati-15154@swati-15154:~/documents$ javac -cp Jarfile.jar Two.java
+Two.java:1: error: '.' expected
+import One;
+          ^
+Two.java:1: error: ';' expected
+import One;
+           ^
+2 errors
+swati-15154@swati-15154:~/documents$ rm One.class
+swati-15154@swati-15154:~/documents$ rm One.java
+swati-15154@swati-15154:~/documents$ javac -cp Jarfile.jar Two.java
+Two.java:1: error: '.' expected
+import One;
+          ^
+Two.java:1: error: ';' expected
+import One;
+           ^
+2 errors
+swati-15154@swati-15154:~/documents$ vi Two.java
+swati-15154@swati-15154:~/documents$ javac -cp Jarfile.jar Two.java
+swati-15154@swati-15154:~/documents$ java -cp Jarfile.jar Two
+Error: Could not find or load main class Two
+swati-15154@swati-15154:~/documents$ java Two
+Two.javaException in thread "main" java.lang.NoClassDefFoundError: One
+	at Two.main(Two.java:5)
+Caused by: java.lang.ClassNotFoundException: One
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 1 more
+swati-15154@swati-15154:~/documents$ java -cp Jarfile.jar Two
+Error: Could not find or load main class Two
+swati-15154@swati-15154:~/documents$ vi Two.java
+swati-15154@swati-15154:~/documents$ javac -cp Jarfile.jar Two.java
+swati-15154@swati-15154:~/documents$ java -cp Jarfile.jar Two.java
+Error: Could not find or load main class Two.java
+swati-15154@swati-15154:~/documents$ java -cp Jarfile.jar Two
+Error: Could not find or load main class Two
+swati-15154@swati-15154:~/documents$ vi Two.java
+swati-15154@swati-15154:~/documents$ javac -cp Jarfile.jar Two.java
+swati-15154@swati-15154:~/documents$ java -cp Jarfile.jar Two
+Error: Could not find or load main class Two
+swati-15154@swati-15154:~/documents$ java -cp Two
+Usage: java [-options] class [args...]
+           (to execute a class)
+   or  java [-options] -jar jarfile [args...]
+           (to execute a jar file)
+where options include:
+    -d32	  use a 32-bit data model if available
+    -d64	  use a 64-bit data model if available
+    -server	  to select the "server" VM
+                  The default VM is server,
+                  because you are running on a server-class machine.
+
+
+    -cp <class search path of directories and zip/jar files>
+    -classpath <class search path of directories and zip/jar files>
+                  A : separated list of directories, JAR archives,
+                  and ZIP archives to search for class files.
+    -D<name>=<value>
+                  set a system property
+    -verbose:[class|gc|jni]
+                  enable verbose output
+    -version      print product version and exit
+    -version:<value>
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  require the specified version to run
+    -showversion  print product version and continue
+    -jre-restrict-search | -no-jre-restrict-search
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  include/exclude user private JREs in the version search
+    -? -help      print this help message
+    -X            print help on non-standard options
+    -ea[:<packagename>...|:<classname>]
+    -enableassertions[:<packagename>...|:<classname>]
+                  enable assertions with specified granularity
+    -da[:<packagename>...|:<classname>]
+    -disableassertions[:<packagename>...|:<classname>]
+                  disable assertions with specified granularity
+    -esa | -enablesystemassertions
+                  enable system assertions
+    -dsa | -disablesystemassertions
+                  disable system assertions
+    -agentlib:<libname>[=<options>]
+                  load native agent library <libname>, e.g. -agentlib:hprof
+                  see also, -agentlib:jdwp=help and -agentlib:hprof=help
+    -agentpath:<pathname>[=<options>]
+                  load native agent library by full pathname
+    -javaagent:<jarpath>[=<options>]
+                  load Java programming language agent, see java.lang.instrument
+    -splash:<imagepath>
+                  show splash screen with specified image
+See http://www.oracle.com/technetwork/java/javase/documentation/index.html for more details.
+swati-15154@swati-15154:~/documents$ java Two
+Two.javaException in thread "main" java.lang.NoClassDefFoundError: One
+	at Two.main(Two.java:4)
+Caused by: java.lang.ClassNotFoundException: One
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 1 more
+swati-15154@swati-15154:~/documents$ java -cp Jarfile.jar Two
+Error: Could not find or load main class Two
+swati-15154@swati-15154:~/documents$ java -cp 'Jarfile.jar' Two
+Error: Could not find or load main class Two
+swati-15154@swati-15154:~/documents$ java -cp '.:/Jarfile.jar' Two
+Two.javaException in thread "main" java.lang.NoClassDefFoundError: One
+	at Two.main(Two.java:4)
+Caused by: java.lang.ClassNotFoundException: One
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 1 more
+swati-15154@swati-15154:~/documents$ java -cp Two Jarfile.jar
+Error: Could not find or load main class Jarfile.jar
+swati-15154@swati-15154:~/documents$ java -cp '.:/Jarfile.jar' Two
+Two.javaException in thread "main" java.lang.NoClassDefFoundError: One
+	at Two.main(Two.java:4)
+Caused by: java.lang.ClassNotFoundException: One
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 1 more
+swati-15154@swati-15154:~/documents$ java -cp .:/Jarfile.jar Two
+Two.javaException in thread "main" java.lang.NoClassDefFoundError: One
+	at Two.main(Two.java:4)
+Caused by: java.lang.ClassNotFoundException: One
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 1 more
+swati-15154@swati-15154:~/documents$ java -cp ./Jarfile.jar Two
+Error: Could not find or load main class Two
+swati-15154@swati-15154:~/documents$ java -cp /Jarfile.jar Two
+Error: Could not find or load main class Two
+swati-15154@swati-15154:~/documents$ java -cp \Jarfile.jar Two
+Error: Could not find or load main class Two
+swati-15154@swati-15154:~/documents$ java -cp '/Jarfile.jar' Two
+Error: Could not find or load main class Two
+swati-15154@swati-15154:~/documents$ vi Manifest.txt
+swati-15154@swati-15154:~/documents$ jar cvfm Final.jar Manifest.txt Two.class
+added manifest
+adding: Two.class(in = 438) (out= 299)(deflated 31%)
+swati-15154@swati-15154:~/documents$ java -jar Final.jar
+Two.javaException in thread "main" java.lang.NoClassDefFoundError: One
+	at Two.main(Two.java:4)
+Caused by: java.lang.ClassNotFoundException: One
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 1 more
+swati-15154@swati-15154:~/documents$ vi Manifest.txt
+swati-15154@swati-15154:~/documents$ jar cvfm Final.jar Manifest.txt Two.class
+added manifest
+adding: Two.class(in = 438) (out= 299)(deflated 31%)
+swati-15154@swati-15154:~/documents$ java -jar Final.jar
+Two.javaOne
+swati-15154@swati-15154:~/documents$ javac -cp Jarfile.jar Two.java
+swati-15154@swati-15154:~/documents$ java -cp Jarfile.jar Two
+Error: Could not find or load main class Two
+swati-15154@swati-15154:~/documents$ open .
+swati-15154@swati-15154:~/documents$ open .
+swati-15154@swati-15154:~/documents$ vi Main.java
+swati-15154@swati-15154:~/documents$ javac -cp calculator.jar Main.java
+swati-15154@swati-15154:~/documents$ java Main
+Exception in thread "main" java.lang.NoClassDefFoundError: Add
+	at Main.main(Main.java:3)
+Caused by: java.lang.ClassNotFoundException: Add
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 1 more
+swati-15154@swati-15154:~/documents$ java -cp calculator.jar Main
+Error: Could not find or load main class Main
+swati-15154@swati-15154:~/documents$ java -cp .:/calculator.jar Main
+Exception in thread "main" java.lang.NoClassDefFoundError: Add
+	at Main.main(Main.java:3)
+Caused by: java.lang.ClassNotFoundException: Add
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 1 more
+swati-15154@swati-15154:~/documents$ java -cp ./calculator.jar Main
+Error: Could not find or load main class Main
+swati-15154@swati-15154:~/documents$ java -cp /calculator.jar Main
+Error: Could not find or load main class Main
+swati-15154@swati-15154:~/documents$ java -cp .calculator.jar Main
+Error: Could not find or load main class Main
+swati-15154@swati-15154:~/documents$ java -cp .:calculator.jar Main
+30swati-15154@swati-15154:~/documents$ java -cp .:Jarfile.jar Two
+Two.javaOne
+swati-15154@swati-15154:~/documents$ java Two
+Two.javaException in thread "main" java.lang.NoClassDefFoundError: One
+	at Two.main(Two.java:4)
+Caused by: java.lang.ClassNotFoundException: One
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 1 more
+swati-15154@swati-15154:~/documents$ 
