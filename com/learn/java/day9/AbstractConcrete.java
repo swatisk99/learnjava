@@ -12,7 +12,7 @@ public class AbstractConcrete extends StudentAbstract {
 	 * The method AbstractConcrete.printDetails() does not override the inherited method  
 	 * from StudentAbstract since it is private to a different package
 	 */
-	void printDetails() {
+	protected void printDetails() {
 		System.out.println("Hi");
 		
 	}
