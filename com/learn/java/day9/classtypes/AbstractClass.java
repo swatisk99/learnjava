@@ -60,6 +60,7 @@ public class AbstractClass {
 		obj3.sayHello();
 		obj3.closeScanner();
 		
+		
 		//System.out.println(swati.d);
 		
 	}

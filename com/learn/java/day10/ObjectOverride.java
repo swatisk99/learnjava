@@ -30,9 +30,10 @@ class MyObject implements Cloneable{
     }
 	
 	/**
-	 * 
+	 * By convention, classes that implement this interface should override
+	 * Object.clone (which is protected) with a public method.
 	 */
-	protected Object clone() throws CloneNotSupportedException {
+	public Object clone() throws CloneNotSupportedException {
 		System.out.println(this+"\t"+super.clone());
 		return super.clone();
 	}
@@ -42,7 +43,7 @@ class MyObject implements Cloneable{
 	 * returns objectId%1000
 	 */
 	public int hashCode() {
-		return (int)objectId%1000;
+		return (int)objectId/50;
 	}
 	
 }
@@ -64,7 +65,8 @@ public class ObjectOverride implements Cloneable{		//if Cloneable not implemente
 		System.out.println(obj1+"\n"+obj2+"\n"+obj3+"\n"+obj4);
 		
 		Object obj5=obj4.clone();			//	The method clone() from the type Object is not visible
-		System.out.println("Object5(clones Object4)==Object4? "+obj5.equals(obj4));
+		System.out.println("Object5(clones Object4)==Object4?\t"+obj5.equals(obj4));
+		System.out.println(obj5);
 		
 		System.out.println("\n\nUse methods of Object.class");
 		ObjectOverride object1 = new ObjectOverride();

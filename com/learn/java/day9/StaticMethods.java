@@ -13,6 +13,12 @@ public class StaticMethods {
 	static {
 		System.out.println("This is a static initialization block");
 	}
+	
+	static int b=4;
+	static {
+		System.out.println("swati");
+	}
+	static String c="SK";
 	void print() {
 		
 			System.out.println("hi");
@@ -23,9 +29,7 @@ public class StaticMethods {
 		//print();  Cannot make a static reference to the non-static method print() from the type StaticMethods
 		StaticMethods staticMethods = new StaticMethods();
 		staticMethods.print();
-		display();
-		
-		
+		display();		
 		//System.out.println(staticMethods.FINAL_VAR++); ==> Unresolved compilation problem : The final field StaticMethods.finalVar cannot be assigned
 	}
  
