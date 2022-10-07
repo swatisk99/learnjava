@@ -33,5 +33,6 @@ public class ImplementNestedIface{
 		OuterInterface.saySomething();
 		//OuterInterface.sayDefault();		//Cannot make a static reference to the non-static method sayDefault() from the type OuterInterface
 		object2.sayDefault();
+		
 	}
 }
