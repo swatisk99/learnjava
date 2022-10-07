@@ -15,6 +15,10 @@ public interface OuterInterface {
 	public static void saySomething() {
 		System.out.println("Static method in Outer Interface");
 	}
+	
+	public default void sayDefault() {
+		System.out.println("Default method in interface");
+	}
 	public interface InnerInterface{
 		//public static final double PI=22/7;
 		public void sayInner();
