@@ -1,6 +1,6 @@
 package com.learn.java.day9;
 
-import com.learn.java.day9.classtypes.StudentAbstract;
+import com.learn.java.ch9.abstracts.StudentAbstract;
 
 /**
  * This class must implement the inherited abstract method StudentAbstract.printDetails(),
@@ -12,12 +12,12 @@ public class AbstractConcrete extends StudentAbstract {
 	 * The method AbstractConcrete.printDetails() does not override the inherited method  
 	 * from StudentAbstract since it is private to a different package
 	 */
-	protected void printDetails() {
+	public void printDetails() {
 		System.out.println("Hi");
 		
 	}
 
-	protected void getAge() {
+	public void getAge() {
 		// TODO Auto-generated method stub
 		
 	}

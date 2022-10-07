@@ -1,20 +1,21 @@
-package com.learn.java.day9.classtypes;
+package com.learn.java.ch9.abstracts;
 
 import java.util.Scanner;
 
-//Concrete class
 abstract class StudentDetails extends StudentAbstract{
 	int d =4;
 	long id = 1514; 
-	static Scanner scan = new Scanner(System.in);
+	
 	//implementation of abstract methods are given here
-	protected void printDetails(){
+	public void printDetails(){
+		Scanner scan = new Scanner(System.in);
 		System.out.println("Name\t: "+name+"\nID\t: "+id+"\tClass\t: "+className);
 		getAge();
 	}
 	
+	
+	//If the class was concrete, this method SHOULD be implemented
 	/**
-	//If this method is removed, then the class must be made abstract
 	protected void getAge() {
 		System.out.println("Enter age : ");
 		age = scan.nextByte();
@@ -22,7 +23,8 @@ abstract class StudentDetails extends StudentAbstract{
 		
 	}
 	*/
-	void sayHello() {
+	
+	public void sayHello() {
 		System.out.println("HELLO!!!");
 	}
 	
@@ -31,21 +33,20 @@ abstract class StudentDetails extends StudentAbstract{
 class Concrete extends StudentDetails{
 
 	@Override
-	protected void getAge() {
+	public void getAge() {
+		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter age : ");
-		age = StudentDetails.scan.nextByte();
+		age = scan.nextByte();
 		System.out.println("Age "+age+" "+d);		
 	}
-	void closeScanner() {
-		scan.close();
-	}
+	
 	
 }
 
 
 public class AbstractClass {
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		//Student swati = new Student();		==> Cannot instantiate the type Student
 		StudentAbstract obj1 = new Concrete();
 		StudentDetails obj2 = new Concrete();
@@ -58,8 +59,6 @@ public class AbstractClass {
 		
 		obj3.printDetails();
 		obj3.sayHello();
-		obj3.closeScanner();
-		
 		
 		//System.out.println(swati.d);
 		

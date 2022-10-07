@@ -1,11 +1,10 @@
 package com.learn.java.day9.extra;
-
+import static com.learn.java.day9.OuterClass.*;
 class A{
 	static int value=4;
 	static {
 		System.out.println("I'm static block in A");
 	}
-	
 	void callsAnotherMethod() {
 		System.out.println("This is first method of A\nCalling next method...");
 		
@@ -42,9 +41,22 @@ class A{
 }
 
 class B extends A{
+	
 	static {
-		//value=5;
+		value=5;
 		System.out.println("i'm static block in B");
+	}
+	static int c=4;
+	static {
+		c=5;
+		System.out.println("i'm static block in B");
+		random();
+	}
+	{	
+		System.out.println("hi");
+	}
+	B(){
+		System.out.println("hello");
 	}
 	//protected int value;
 	void callsAnotherMethod() {
@@ -53,6 +65,7 @@ class B extends A{
 		this.displayMessage();
 		//super.displayMessage();
 		super.callsAnotherMethod(this);
+		
 	}
 	
 	protected void displayMessage() {
@@ -64,8 +77,15 @@ class B extends A{
 	 void overloadMethod(int character) {
 		 System.out.println("Integer");
 	 }
+	 
+	 void overloadMethod(long character) {
+		 System.out.println("Long");
+	 }
 	final void printMessage() {
 		System.out.println("This is a final method in B");
+	}
+	static void random() {
+		System.out.println("Random static method in B");
 	}
 }
 
@@ -73,29 +93,31 @@ class B extends A{
 class Demo {
 
 	public static void main(String[] args) {
-		
 		//System.out.println(D.value);
 		A objA = new A();
-		objA.callsAnotherMethod();
-		System.out.println();		
+		//objA.callsAnotherMethod();
+		//System.out.println();		
 		
 		B objB = new B();
-		objB.callsAnotherMethod();
-		System.out.println();
+		//objB.callsAnotherMethod();
+		//System.out.println();
 		
 		D objD = new D();
-		objD.callsAnotherMethod();
-		System.out.println();
+		//objD.callsAnotherMethod();
+		//System.out.println();
 		
-		objA.printMessage();
-		objB.printMessage();
-		objD.printMessage();
-		
-		 objB.overloadMethod('a');
+		//objA.printMessage();
+		//objB.printMessage();
+		//objD.printMessage();
+		//long variable = 10l;
+		//objB.overloadMethod((int)variable);
 		 
 		 A objB1 = new B();
-		 objB1.callsAnotherMethod();
-	
+		 //objB1.callsAnotherMethod();
+		// System.out.print(d);
+		 
+		 
+		 StaticClass.testing();
 	}
 
 }

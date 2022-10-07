@@ -76,7 +76,7 @@ public class AccessSpecifiers {
 	
 	
 	//accessing default class
-	Outer o = new Outer();
+	OuterClass o = new OuterClass();
 	
 	//accessing public class
 	HelloWorld hw = new HelloWorld();

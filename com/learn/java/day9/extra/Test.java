@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 class VarArgs {
 	int randomValue;
+	void findSum(VarArgs...objects) {
+		System.out.println("VarArgs array");
+	}
 	double findSum(double ... array) {
 		double sum=0;
 		for(double i:array) {
@@ -20,6 +23,15 @@ class VarArgs {
 	}
 	
 	double findSum(byte a,double ... array) {
+		double sum=0;
+		for(double i:array) {
+			sum+=i;
+		}
+		System.out.println("this one");
+		return sum;
+	}
+	
+	double findSum(byte a,byte ... array) {
 		double sum=0;
 		for(double i:array) {
 			sum+=i;
@@ -58,6 +70,9 @@ class VarArgs {
 }
 class Test{
 	public static void main(String ... args) {
+	
+		VarArgs v = new VarArgs();
+		
 		System.out.println("Enter number of elements to find sum");
 		Scanner scan = new Scanner(System.in);
 		int size = scan.nextInt();
@@ -66,16 +81,17 @@ class Test{
 		for(int i=0;i<size;i++) {
 			array[i]=scan.nextDouble();
 		}
-		VarArgs v = new VarArgs();
 		//Passing an array
 		System.out.println("Sum of elements in array = "+v.findSum(array));
-		System.out.println("Sum of elements in array = "+v.findSum());
+		//System.out.println("Sum of elements in array = "+v.findSum());
 
 		System.out.println("Sum of 2,4,2,4,5,63,8,55,77 = "+v.findSum(2,4,2,4,5,63,8,55,77));
 		//The method findSum(double[]) is ambiguous for the type VarArgs
 		//System.out.println("Sum of a,b,c,d,e,f = "+v.findSum('a','b','c','d','e','f'));
 		System.out.println("Sum of elements in array = "+v.findSum(1.789987,2.79879));
-		
-	}
+		byte a=1,b=2;
+		System.out.println(v.findSum((byte)a,(byte)b));
+		v.findSum(null,new VarArgs(),null);
+			}
 	
 }

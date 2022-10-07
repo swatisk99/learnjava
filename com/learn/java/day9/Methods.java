@@ -6,7 +6,6 @@ public class Methods {
 	}
 	private static void sumValues(char c,int d) {
 		System.out.println((char)(c+d));
-
 	}
 	
 	/**
@@ -15,6 +14,8 @@ public class Methods {
 	 * }
 	 * will confuse the compiler because of ambiguity
 	**/
+	
+	
 	public static void main(String[] args) {
 		sumValues('a','b');
 		sumValues(12,'b');

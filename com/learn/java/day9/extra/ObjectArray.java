@@ -48,6 +48,7 @@ public class ObjectArray {
 
 	}
 	static StudentDetails[] createStudentRecords(int size) {
+
 		Scanner scan = new Scanner(System.in);
 		StudentDetails[] students = new StudentDetails[size];
 		for(int i=0;i<size;i++) {
