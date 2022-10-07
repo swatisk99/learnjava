@@ -2,7 +2,9 @@ package com.learn.java.ch9.abstracts;
 
 import java.util.Scanner;
 
-abstract class StudentDetails extends StudentAbstract{
+import com.learn.java.ch9.interfaces.Interface1;
+
+abstract class StudentDetails extends StudentAbstract implements Interface1{
 	int d =4;
 	long id = 1514; 
 	
@@ -39,6 +41,11 @@ class Concrete extends StudentDetails{
 		age = scan.nextByte();
 		System.out.println("Age "+age+" "+d);		
 	}
+
+	@Override
+	public void method1(int param) {
+		System.out.println("Method of Interface1 implemented by child class");
+	}
 	
 	
 }
@@ -56,9 +63,11 @@ public class AbstractClass {
 		
 		obj2.printDetails();
 		obj2.sayHello();
+		obj2.method1(0);
 		
 		obj3.printDetails();
 		obj3.sayHello();
+		obj3.method1(0);
 		
 		//System.out.println(swati.d);
 		
