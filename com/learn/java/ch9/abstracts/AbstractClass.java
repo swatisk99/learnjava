@@ -6,8 +6,6 @@ import com.learn.java.ch9.interfaces.Interface1;
 
 abstract class StudentDetails extends StudentAbstract implements Interface1{//Abstract class can give implementations of interface the vice versa not possible since interface only extend interface
 	
-	int d =4;
-	long id = 1514; 
 	
 	//implementation of abstract methods are given here
 	public void printDetails(){
@@ -40,11 +38,8 @@ class Concrete extends StudentDetails{
 	@Override
 	public void getAge(){
 		Scanner scan = new Scanner(System.in);
-		
-			System.out.println("Enter age : ");
-			age = scan.nextByte();
-			System.out.println("Age "+age+" "+d);
-		
+		System.out.println("Enter age : ");
+		age = scan.nextByte();		
 			
 	}
 	/**
@@ -55,10 +50,10 @@ class Concrete extends StudentDetails{
 		System.out.println("Method of Interface1 implemented by child class");
 	}
 	
-	public static void say() { 
+	/**public static void say() { 
 		System.out.println("Say method");
 	}
-	
+	*/
 }
 
 
@@ -67,20 +62,19 @@ public class AbstractClass{
 		//Student swati = new Student();		==> Cannot instantiate the type Student
 	
 		StudentAbstract obj1 = new Concrete();
-		StudentDetails obj2 = new Concrete();
-		Concrete obj3 = new Concrete();
 		obj1.printDetails();
 		obj1.sayHello();
 		
+		StudentDetails obj2 = new Concrete();
 		obj2.printDetails();
 		obj2.sayHello();
 		obj2.method1(0);
 		//StudentDetails.say();
 		
+		Concrete obj3 = new Concrete();
 		obj3.printDetails();
 		obj3.sayHello();
 		obj3.method1(0);
-		//System.out.println(swati.d);
 		
 	}
 }
