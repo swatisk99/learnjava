@@ -5,10 +5,10 @@ public class MyException extends Exception {
 	
 	String message;
 	public MyException(String name){
-		message =  "Name should contain atleast 3 letters "+name;
+		message =  "Name should contain atleast 3 letters : "+name;
 	}
 	public MyException(byte age) {
-		message  = "Age should be above 18"+age;
+		message  = "Age should be above 18 : "+age;
 	}
 	
 	public String toString() {
