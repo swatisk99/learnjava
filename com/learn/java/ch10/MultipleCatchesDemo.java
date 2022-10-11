@@ -35,6 +35,7 @@ public class MultipleCatchesDemo {
 	public void callPrivate() {
 		this.showSomething();
 	}
+	
 	public static void main(String[] args) {
 		try {
 			MultipleCatches obj = new MultipleCatches();

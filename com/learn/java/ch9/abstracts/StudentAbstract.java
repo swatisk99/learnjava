@@ -2,7 +2,7 @@ package com.learn.java.ch9.abstracts;
 
 import com.learn.java.ch9.interfaces.Interface1;
 
-public abstract class StudentAbstract implements Interface1{
+public abstract class StudentAbstract{
 	public String name = "Swati";
 	public String className = "12-A";
 	public long id = 15154; 
