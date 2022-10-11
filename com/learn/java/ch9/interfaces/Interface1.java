@@ -5,5 +5,11 @@ public interface Interface1{
 	
 	public void method1(int param);
 	//String method2();
-	
+
+	default public void saySee() {
+		System.out.println("see");
 	}
+	
+}
+
+

@@ -9,7 +9,7 @@ abstract class StudentDetails extends StudentAbstract implements Interface1{//Ab
 	
 	//implementation of abstract methods are given here
 	public void printDetails(){
-		System.out.println("Name\t: "+name+"\nID\t: "+id+"\tClass\t: "+className);
+		System.out.print("Name\t: "+name+"\tID\t: "+id+"\tClass\t: "+className+"\t");
 		getAge();
 	}
 	
@@ -29,6 +29,7 @@ abstract class StudentDetails extends StudentAbstract implements Interface1{//Ab
 	public void sayHello() {
 		System.out.println("HELLO!!!");
 	}
+	
 	
 }
 
@@ -70,11 +71,16 @@ public class AbstractClass{
 		obj2.sayHello();
 		obj2.method1(0);
 		//StudentDetails.say();
+
 		
 		Concrete obj3 = new Concrete();
 		obj3.printDetails();
 		obj3.sayHello();
 		obj3.method1(0);
+		
+		Interface1 obj4 = new Concrete();
+		//Parent implementation >> Iface implementation
+		obj4.saySee();
 		
 	}
 }

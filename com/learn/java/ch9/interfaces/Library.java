@@ -2,7 +2,13 @@ package com.learn.java.ch9.interfaces;
 
 public interface Library {
 	   public void issueBook();
-	   void retrieveBook();
+	   public void retrieveBook();
+	   
+	   /**
+	    * Helps in packaging code, ie., to develop more readable 
+	    * and maintainable code because it logically group classes 
+	    * and interfaces in one place only
+	    */
 	   public class Book implements Library {
 		   public Book(int bId, String dOI, String rD,String bN, String mN){
 			   bookId = bId;
