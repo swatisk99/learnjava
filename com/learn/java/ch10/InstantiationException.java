@@ -1,11 +1,9 @@
 package com.learn.java.ch10;
 
-//import com.learn.java.ch9.AbstractChild;
-
-public class InstantiationException extends Exception{
+public class InstantiationException{
 	public static void callMethod() throws java.lang.InstantiationException{
 		try {
-			//AbstractChild obj = new AbstractChild();		//com.learn.java.ch10.InstantiationException.main(InstantiationException.java:9)
+			//Object b = InstantiationException.newInstance();		//com.learn.java.ch10.InstantiationException.main(InstantiationException.java:9)
 			throw new java.lang.InstantiationException("Cannot instantiate");
 		}
 		finally {
@@ -13,13 +11,14 @@ public class InstantiationException extends Exception{
 		}
 	}
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws java.lang.InstantiationException{
 		try {
 			callMethod();
 		}
 		catch(java.lang.InstantiationException e) {
 			System.out.println("ERROR : "+e.getMessage());
-			e.printStackTrace();
+			//e.printStackTrace();
+			//throw e;
 		}
 		finally {
 			System.out.println("Printed error");

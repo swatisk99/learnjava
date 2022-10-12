@@ -29,12 +29,6 @@ class MultipleCatches {
 
 
 public class MultipleCatchesDemo {
-	private void showSomething() {
-		System.out.println("Show something");
-	}
-	public void callPrivate() {
-		this.showSomething();
-	}
 	
 	public static void main(String[] args) {
 		try {

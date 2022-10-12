@@ -3,17 +3,17 @@ package com.learn.java.ch10;
 import java.util.Scanner;
 
 class NestedTry {
-	
 	void printHashcode(String s) {
 		System.out.println(s.hashCode());
 	}
 	void sayRandom() throws IllegalAccessException{
-		
 		//Nested try
 		try {
+			
 			//int a=9/0;		//'java.lang.ArithmeticException: / by zero' is printed after "finally"
 			System.out.println("Random");
 			try {
+				
 				throw new IllegalAccessException("illegal");
 				//System.out.println("after throwing exception");		//unreachable code
 
@@ -27,8 +27,6 @@ class NestedTry {
 				catch(ArrayIndexOutOfBoundsException aioobe) {
 					System.out.println(aioobe);
 				}
-				
-				
 				//On commenting the below catch block,ONLY the catch block corresponding 
 				//to the NullPointerException in the main method will be executed
 				catch(NullPointerException npe) {
@@ -46,13 +44,12 @@ class NestedTry {
 	}
 }
 
-
 public class TryCatchFinallyDemo {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		NestedTry obj = new NestedTry();
 		try {
-			NestedTry obj = new NestedTry();
 			obj.sayRandom();
 			System.out.println("1..");	//If exception caught in previous lines, this line will not be printed since program control transferred to catch block.
 		}
