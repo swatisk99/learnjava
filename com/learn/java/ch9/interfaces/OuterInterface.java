@@ -5,7 +5,7 @@ package com.learn.java.ch9.interfaces;
 public interface OuterInterface {
 	public static final double PI=3.14;
 	
-	public void sayOuter();
+	void sayOuter();
 	
 	//public static void sayStatic();		//This method requires a body instead of a semicolon since static methods are not overridden
 	
@@ -23,5 +23,4 @@ public interface OuterInterface {
 		//public static final double PI=22/7;
 		public void sayInner();
 	}
-
 }
