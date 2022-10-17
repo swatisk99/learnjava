@@ -1,6 +1,7 @@
 package com.learn.java.ch10;
 
 
+import java.math.*;
 import java.util.Scanner;
 
 class MultipleCatches {
@@ -18,6 +19,11 @@ class MultipleCatches {
 			array[1]  = 32;
 			int array2[]= new int [-1];
 			System.out.println(name.charAt(5));
+			//ArithmeticException:
+			BigDecimal dividend = new BigDecimal(22);
+			BigDecimal divisor = new BigDecimal(3);
+			System.out.println(dividend.divide(divisor));	//Non-terminating decimal expansion; no exact representable decimal result.
+											//Solution : dividend.divide(divisor,<number of digits to round off>,BigDecimal.ROUND_DOWN)
 			throw new IllegalAccessException("illegal");
 			
 		}
