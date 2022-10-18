@@ -7,13 +7,17 @@ class SecondThread implements Runnable{
 		System.out.println(t);
 		//sets thread to non-user thread
 		t.setDaemon(true);
+		//t.run();
+		//System.out.println(t.isAlive());			//false
 		t.start();
+		System.out.println(t.isAlive());			//true
+
 		
 	}
 	
 	public void run() {
 		try {	
-			for (int i = 0 ; i < 100 ; i++) {
+			for (int i = 0 ; i < 30 ; i++) {
 				System.out.println("Runnable thread .."+(i));
 				Thread.sleep(1000);
 			}
@@ -55,16 +59,17 @@ class ThirdThread extends Thread{
 }
 public class TryThreading{
 
-	public static void main(String[] args) {			
+	public static void main(String[] args) {	
 		SecondThread a = new SecondThread();
 		ThirdThread c = new ThirdThread();
+		//Tests if this thread is alive
 		System.out.println(a.t.isAlive());
-		
 		Thread current = Thread.currentThread();
 		System.out.println(current);
 		try {
 			for (int i = 0 ; i < 5 ; i++) {
 				System.out.println("Main thread .."+i);
+				//thread pauses for 4s
 				Thread.sleep(400);
 			}
 			//waits for thread c for 0.4s
@@ -76,7 +81,10 @@ public class TryThreading{
 
 		}catch(Exception e) {
 			System.out.println("Main thread interrupted");
-
+		}
+		finally {
+			//Number of currently active threads
+			System.out.println(Thread.activeCount());
 		}
 	}
 
