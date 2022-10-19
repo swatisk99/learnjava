@@ -4,7 +4,6 @@ package com.learn.java.ch9.quest;
 class A{
 	void method8() {
 		System.out.println("8");
-	
 	}
 }
 class B extends A implements I1,I2,I3{

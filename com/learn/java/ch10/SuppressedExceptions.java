@@ -27,5 +27,4 @@ public class SuppressedExceptions {
 			System.out.println(e);
 		}
 	}
-
 }

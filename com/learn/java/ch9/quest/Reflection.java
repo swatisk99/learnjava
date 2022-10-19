@@ -34,8 +34,7 @@ public class Reflection {
 		Method [] methods = swati.getClass().getDeclaredMethods();
 		for(Method method : methods) {
 			System.out.println(method.getName());
-		}
-		
+		}		
 		for(Field field : declaredFields) {
 			if(field.getName().equals("fullName")) {
 				field.setAccessible(true);
