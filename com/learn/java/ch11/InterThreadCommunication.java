@@ -1,7 +1,11 @@
 package com.learn.java.ch11;
 
 import java.util.*;
-
+/**
+ * contains 2 methods buy and sell based on number of tickets
+ * @author swati-15154
+ *
+ */
 class Ticket{
 	Random random = new Random();
 	static int numberOfTickets=20;
@@ -22,9 +26,9 @@ class Ticket{
 		else {
 			isSalePossible = random.nextBoolean();
 		}
+		//notify all waiting threads that method can be used by any 1 at a time
 		notifyAll();
-	}	
-	
+	}		
 	synchronized void returnTicket() {
 		while(isSalePossible) {
 			try{
@@ -44,6 +48,11 @@ class Ticket{
 		notifyAll();
 	}
 }
+/**
+ * Creates thread for selling tickets(object of Ticket class)
+ * @author swati-15154
+ *
+ */
 class TicketSeller implements Runnable{
 	Ticket ticket;
 	TicketSeller(Ticket tkt){
@@ -56,21 +65,29 @@ class TicketSeller implements Runnable{
 		}
 	}
 }
+/**
+ * Creates thread for buying tickets(object of Ticket class)
+ * @author swati-15154
+ *
+ */
 class Buyer implements Runnable{
 	Ticket ticket;
 	Buyer(Ticket tkt){
 		ticket = tkt;
 		new Thread(this).start();
 	}
-	
 	@Override
 	public void run() {
 		while(true) {
 			ticket.buyTicket();
 		}
 	}
-	
 }
+/**
+ * Program to see Producer-Consumer like behavior.
+ * @author swati-15154
+ *
+ */
 public class InterThreadCommunication {
 	public static void main(String[] args) {
 		Ticket tickets = new Ticket();

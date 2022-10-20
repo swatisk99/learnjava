@@ -52,7 +52,6 @@ class Thread1 implements Runnable{
 			obj.doMethod(this);
 		}
 	}
-	
 }
 class Thread2 implements Runnable{
 	ObjectClass obj;
@@ -65,8 +64,7 @@ class Thread2 implements Runnable{
 		while(true) {
 			obj.doAnotherMethod(this);
 		}
-	}
-	
+	}	
 }
 class Thread3 implements Runnable{
 	ObjectClass obj;
@@ -80,7 +78,6 @@ class Thread3 implements Runnable{
 			obj.doMethod(this);
 		}
 	}
-	
 }
 class Thread4 implements Runnable{
 	ObjectClass obj;
@@ -94,8 +91,12 @@ class Thread4 implements Runnable{
 			obj.doAnotherMethod(this);
 		}
 	}
-	
 }
+/**
+ * Just to understand behavior of wait notify and notifyAll in case of multiple threads
+ * @author swati-15154
+ *
+ */
 public class ITC {
 	public static void main(String[] args) {
 		ObjectClass obj = new ObjectClass();
