@@ -1,8 +1,8 @@
 package com.learn.java.ch11;
-class SecondThread implements Runnable{
+class SeconddThread implements Runnable{
 	Thread t;
 	static int a = 1;
-	SecondThread (){
+	SeconddThread (){
 		t = new Thread(this,"Runnable Thread");
 		System.out.println(t);
 		//sets thread to non-user thread
@@ -60,7 +60,7 @@ class ThirdThread extends Thread{
 public class TryThreading{
 
 	public static void main(String[] args) {	
-		SecondThread a = new SecondThread();
+		SeconddThread a = new SeconddThread();
 		ThirdThread c = new ThirdThread();
 		//Tests if this thread is alive
 		System.out.println(a.t.isAlive());

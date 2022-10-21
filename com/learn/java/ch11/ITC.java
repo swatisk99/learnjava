@@ -18,7 +18,7 @@ class ObjectClass{
 		catch(InterruptedException ie) {
 			System.out.println("InterruptedException caught");
 		}
-		notify();	
+		notifyAll();	
 	}
 	synchronized void doAnotherMethod(Object threadObject){
 		System.out.println(threadObject.getClass().getName()+".doAnotherMethod()\t");

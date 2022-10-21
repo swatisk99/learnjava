@@ -1,5 +1,6 @@
 package com.learn.java.ch11;
 class MyObject{
+	int variable = 23;
 	/**
 	 * The method will only be used by any one thread at a time.
 	 * Only after exiting the method another thread can use it.    
@@ -53,7 +54,7 @@ class MyThread implements Runnable{
 		//	asynchronous method will behave in synchronized manner for the object, i.e, this block ensures that a call to a
 		//	method that is a member of object occurs only after the current thread has successfully entered object’s monitor.
 		synchronized(object){
-			System.out.println("Sync block");
+			System.out.println("Sync block "+object.variable);
 			object.callAsynchronousMethod(word);
 		}
 	}
