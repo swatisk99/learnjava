@@ -20,17 +20,8 @@ public class GroceryStore {
 							else{
 								System.out.print("Quantity : ");
 								itemQuantity = scanner.nextInt();
-								if(itemQuantity > Grocery.SOAP.quantity) {
-									System.out.println("Only "+Grocery.SOAP.quantity+" soaps left");
-									itemQuantity = Grocery.SOAP.quantity;
-									Grocery.SOAP.quantity = 0;
-								}
-								else {
-									Grocery.SOAP.quantity -= itemQuantity;
-								}
-								itemAmount = itemQuantity * Grocery.SOAP.PRICE;
+								itemAmount = Grocery.SOAP.getItemPriceINT(itemQuantity);
 								totalAmount += itemAmount;
-								System.out.println("Total amount for item : "+ itemAmount);
 							}
 							break;
 					case 2:	item = Grocery.SHAMPOO;
@@ -40,17 +31,8 @@ public class GroceryStore {
 							else{
 								System.out.print("Quantity : ");
 								itemQuantity = scanner.nextInt();
-								if(itemQuantity > Grocery.SHAMPOO.quantity) {
-									System.out.println("Only "+Grocery.SHAMPOO.quantity+" shampoos left");
-									itemQuantity = Grocery.SHAMPOO.quantity;
-									Grocery.SHAMPOO.quantity = 0;
-								}
-								else {
-									Grocery.SHAMPOO.quantity -= itemQuantity;
-								}
-								itemAmount = itemQuantity * Grocery.SHAMPOO.PRICE;
+								itemAmount = Grocery.SHAMPOO.getItemPriceINT(itemQuantity);
 								totalAmount += itemAmount;
-								System.out.println("Total amount for item : "+ itemAmount);
 							}
 							break;
 					case 3:	item = Grocery.CONDITIONER;
@@ -60,17 +42,8 @@ public class GroceryStore {
 							else{
 								System.out.print("Quantity : ");
 								itemQuantity = scanner.nextInt();
-								if(itemQuantity > Grocery.CONDITIONER.quantity) {
-									System.out.println("Only "+Grocery.CONDITIONER.quantity+" conditioners left");
-									itemQuantity = Grocery.CONDITIONER.quantity;
-									Grocery.CONDITIONER.quantity = 0;
-								}
-								else {
-									Grocery.CONDITIONER.quantity -= itemQuantity;
-								}
-								itemAmount = itemQuantity * Grocery.CONDITIONER.PRICE;
+								itemAmount = Grocery.CONDITIONER.getItemPriceINT(itemQuantity);
 								totalAmount += itemAmount;
-								System.out.println("Total amount for item : "+ itemAmount);
 							}
 							break;
 					case 4:	item = Grocery.BODYWASH;
@@ -80,17 +53,8 @@ public class GroceryStore {
 							else{
 								System.out.print("Quantity : ");
 								itemQuantity = scanner.nextInt();
-								if(itemQuantity > Grocery.BODYWASH.quantity) {
-									System.out.println("Only "+Grocery.BODYWASH.quantity+" bodywash left");
-									itemQuantity = Grocery.BODYWASH.quantity;
-									Grocery.BODYWASH.quantity = 0;
-								}
-								else {
-									Grocery.BODYWASH.quantity -= itemQuantity;
-								}
-								itemAmount = itemQuantity * Grocery.BODYWASH.PRICE;
+								itemAmount = Grocery.BODYWASH.getItemPriceINT(itemQuantity);
 								totalAmount += itemAmount;
-								System.out.println("Total amount for item : "+ itemAmount);
 							}
 							break;				
 					default:	System.out.println("Invalid selection");
