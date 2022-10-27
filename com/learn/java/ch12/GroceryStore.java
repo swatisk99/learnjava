@@ -14,10 +14,7 @@ public class GroceryStore {
 				System.out.print("Choices :\t1.Soap\t2.Shampoo\t3.Conditioner\t4.BodyWash\nEnter choice : ");
 				switch(scanner.nextByte()) {
 					case 1:	item = Grocery.SOAP;
-							if(Grocery.SOAP.quantity == 0) {
-								System.out.println("No soaps left");
-							}
-							else{
+							if(Grocery.SOAP.checkItemAvailabilty()) {
 								System.out.print("Quantity : ");
 								itemQuantity = scanner.nextInt();
 								itemAmount = Grocery.SOAP.getItemPriceINT(itemQuantity);
@@ -25,10 +22,7 @@ public class GroceryStore {
 							}
 							break;
 					case 2:	item = Grocery.SHAMPOO;
-							if(Grocery.SHAMPOO.quantity == 0) {
-								System.out.println("No shampoos left");
-							}
-							else{
+							if(Grocery.SHAMPOO.checkItemAvailabilty()) {
 								System.out.print("Quantity : ");
 								itemQuantity = scanner.nextInt();
 								itemAmount = Grocery.SHAMPOO.getItemPriceINT(itemQuantity);
@@ -36,10 +30,7 @@ public class GroceryStore {
 							}
 							break;
 					case 3:	item = Grocery.CONDITIONER;
-							if(Grocery.CONDITIONER.quantity == 0) {
-								System.out.println("No conditioners left");
-							}
-							else{
+							if(Grocery.CONDITIONER.checkItemAvailabilty()) {
 								System.out.print("Quantity : ");
 								itemQuantity = scanner.nextInt();
 								itemAmount = Grocery.CONDITIONER.getItemPriceINT(itemQuantity);
@@ -47,10 +38,7 @@ public class GroceryStore {
 							}
 							break;
 					case 4:	item = Grocery.BODYWASH;
-							if(Grocery.BODYWASH.quantity == 0) {
-								System.out.println("No bodywash left");
-							}
-							else{
+							if(Grocery.BODYWASH.checkItemAvailabilty()) {
 								System.out.print("Quantity : ");
 								itemQuantity = scanner.nextInt();
 								itemAmount = Grocery.BODYWASH.getItemPriceINT(itemQuantity);
