@@ -17,7 +17,7 @@ public class OrdinalDemo {
 		DaysOfTheWeek day4 = DaysOfTheWeek.MONDAY;
 		Grocery item2 = Grocery.SHAMPOO;
 		//print enum names along with their ordinals i.e, order of listing
-		System.out.println(day3+" "+day3.ordinal()+"\t"+day4+day4.ordinal()+"\t"+item2+" "+item.ordinal());
+		System.out.println(day3+" "+day3.ordinal()+"\t"+day4+day4.ordinal()+"\t"+item2+" "+item2.ordinal());
 		System.out.println(day3==day4);
 		System.out.println(day3.equals(day4));
 		System.out.println(day2.equals(item2));
