@@ -1,7 +1,6 @@
-//$Id$
 package com.learn.java.collections;
 import java.util.*;
-class StudentMarks implements Comparable{
+class StudentMarks implements Comparable<StudentMarks>{
 	String name; 
 	float phyMark, chemMark, mathMark,totalMarks;
 	StudentMarks(String name, float phyMark, float chemMark, float mathMark){
@@ -13,12 +12,10 @@ class StudentMarks implements Comparable{
 	}
 	public String toString() {
 		return "\nName : "+name+"\nTotalMarks : "+totalMarks+ "\nPhy : "+phyMark+"\tChem : "+chemMark+"\tMath : "+mathMark;
-	}
-	
+	}	
 	@Override
-	public int compareTo(Object o) {
-		StudentMarks sMarks = (StudentMarks)o;
-		if(this.name==sMarks.name) {
+	public int compareTo(StudentMarks sMarks) {
+		if(this.name.equalsIgnoreCase(sMarks.name)) {
 			return 0;
 		}
 		if(this.totalMarks==sMarks.totalMarks) {
@@ -48,9 +45,8 @@ class StudentMarks implements Comparable{
 		return 1;
 	}
 }
-public class TreeSetDemo {
+public class RankList {
 	public static Scanner scanner = new Scanner(System.in);
-
 	public static StudentMarks enterStudentMarks(){
 		String name; 
 		float phyMark, chemMark, mathMark;
@@ -70,6 +66,7 @@ public class TreeSetDemo {
 			rankList.add(enterStudentMarks());
 		}
 		System.out.println("\n\n"+rankList);
+		System.out.println(rankList.floor(new StudentMarks("", 9, 9, 9)));		
+		scanner.close();
 	}
-
 }

@@ -13,7 +13,6 @@ class MyComparator implements Comparator<Integer>{
 		if(o1<o2) {	return 1;	}
 		return 0;
 	}
-	
 }
 /**
  * This DS uses heap.. always higher priority values are deleted automatically
