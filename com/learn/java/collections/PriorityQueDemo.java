@@ -37,6 +37,8 @@ public class PriorityQueDemo {
 		System.out.println(pq);
 		//Always root of the heap is removed
 		System.out.println(pq.poll()+" is removed. "+pq.peek()+" is head of the priority queue.");
+		System.out.println(pq);
+
 	}
 
 }
