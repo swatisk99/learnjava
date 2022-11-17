@@ -40,10 +40,8 @@ class AThread implements Runnable{
 	public void stop() {
 		running=false;
 	}
-	
 }
 public class SuspendResumeStop {
-
 	public static void main(String[] args) {
 		AThread thread1 = new AThread("thread1");
 		AThread thread2 = new AThread("thread2");

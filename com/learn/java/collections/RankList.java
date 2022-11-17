@@ -5,7 +5,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.*;
-
 class StudentMarks implements Comparable<StudentMarks>,Serializable{
 	String rollNo; 
 	Float phyMark, chemMark, mathMark,totalMarks;
@@ -92,19 +91,18 @@ public class RankList {
 			rankList.add(enterStudentMarks());
 		}
 		try{
-			FileOutputStream fout = new FileOutputStream("StudentDB.txt");
+			FileOutputStream fout = new FileOutputStream("StudentDB1.txt");
 			ObjectOutputStream o = new ObjectOutputStream(fout);
 			o.writeObject(rankList);
 			o.flush();
 	
 		}
- 
         catch (Exception e) {
         	System.out.print(e.toString());
         }
-		
 		System.out.println("\n\nRank List :\n"+rankList);
 //		System.out.println(rankList.floor(new StudentMarks("", 9, 9, 9)));		
 		scanner.close();
+		
 	}
 }

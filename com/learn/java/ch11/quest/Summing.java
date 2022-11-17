@@ -1,53 +1,64 @@
 package com.learn.java.ch11.quest;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 	
 class SummingThread implements Runnable{
-	private static long sum = 0;
-	long a,b;
-	SummingThread(long a,long b){
+	//private static long sum = 0;
+	private BigInteger localSum=BigInteger.ZERO;
+	BigInteger a,b;
+	SummingThread(BigInteger a,BigInteger b){
 		this.a = a;
 		this.b = b;
 	}
-	public long sumForRange()  {
-		long localSum=0;
-		for(long i=a+1; i <= b; i++) {
-			localSum+=i;
+	public void addForRange()  {
+		for(BigInteger i=a.add(BigInteger.ONE); i.compareTo(b) < 1; i=i.add(BigInteger.ONE)) {
+//			System.out.println(localSum);
+			localSum = localSum.add(i);
 		}
-		sum += localSum;
-		return sum;
+	}	
+	public BigInteger getSum() {
+		return localSum;
 	}
-	public static long showSum() {
-		return sum;
-	}
-	
 	@Override
 	public void run() {
-		sumForRange();
-	}
-	
+		addForRange();
+	}	
 }
 public class Summing {
-
+	volatile BigInteger sum=BigInteger.ZERO;
+	final static BigInteger TWO = BigInteger.valueOf(2);
 	public static void main(String[] args) throws InterruptedException {
+		Summing obj = new Summing();
 		System.out.println("Enter number");
+//		BigInteger splitValue = new BigInteger("1000");
 		try(Scanner scanner = new Scanner(System.in)) {
-			int value = scanner.nextInt();
-			if(value<=10) {
-				new SummingThread(0,value).sumForRange();
-				System.out.println(SummingThread.showSum());
-			}
-			else {
-				Thread t1 = new Thread(new SummingThread(0,value/5));
-				Thread t2 = new Thread(new SummingThread(value/5,value/5*2));
-				Thread t3 = new Thread(new SummingThread(value/5*2,value/5*3));
-				Thread t4 = new Thread(new SummingThread(value/5*3,value/5*4));
-				Thread t5 = new Thread(new SummingThread(value/5*4,value));
-				t1.start();	t2.start();	t3.start();	t4.start();	t5.start();
-				t1.join();	t2.join();	t3.join();	t4.join();	t5.join();
-				System.out.println(SummingThread.showSum());
-			}
+			BigInteger value = scanner.nextBigInteger();
+//			if(value.compareTo(splitValue) < 1) {
+				long start,end; 
+				start = System.nanoTime();
+				SummingThread s1 = new SummingThread(BigInteger.ZERO,value);
+				s1.addForRange();	
+				end = System.nanoTime();
+				System.out.println(s1.getSum()+"\nTime for single thread : "+(end-start));
+//			}
+//			else {
+				Summing obj1 = new Summing();
+				start = System.nanoTime();
+				SummingThread s3 = new SummingThread(BigInteger.ZERO,value.divide(TWO));
+				SummingThread s2 = new SummingThread(value.divide(TWO),value);
+				s2.addForRange();
+				Thread t1 = new Thread(s3);
+				t1.start();
+				t1.join();
+				obj1.sum = obj1.sum.add(s3.getSum());
+				obj1.sum = obj1.sum.add(s2.getSum());
+				end = System.nanoTime();
+				System.out.println(obj1.sum+"\nTime for multi thread : "+(end-start));
+//			}
 		}
-		
+		catch(Exception e) {
+			System.out.println(e);
+		}		
 	}
 }

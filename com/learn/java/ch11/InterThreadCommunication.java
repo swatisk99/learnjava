@@ -57,7 +57,6 @@ class TicketSeller implements Runnable{
 	Ticket ticket;
 	TicketSeller(Ticket tkt){
 		ticket = tkt;
-		new Thread(this).start();
 	}
 	public void run() {
 		while(true) {
@@ -74,7 +73,6 @@ class Buyer implements Runnable{
 	Ticket ticket;
 	Buyer(Ticket tkt){
 		ticket = tkt;
-		new Thread(this).start();
 	}
 	@Override
 	public void run() {
@@ -91,7 +89,7 @@ class Buyer implements Runnable{
 public class InterThreadCommunication {
 	public static void main(String[] args) {
 		Ticket tickets = new Ticket();
-		new TicketSeller(tickets);
-		new Buyer(tickets);
+		new Thread(new TicketSeller(tickets)).start();
+		new Thread(new Buyer(tickets)).start();
 	}
 }

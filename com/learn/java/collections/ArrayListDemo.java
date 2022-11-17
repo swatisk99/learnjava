@@ -6,10 +6,14 @@ import java.util.*;
 public class ArrayListDemo {
 
 	public static void main(String[] args) {
+		long startTime = System.nanoTime();
 		ArrayList<Integer> arrayList = new ArrayList<>();
 		for(int i=0;i<3;i++) {
 			arrayList.add(i);
 		}
+		long endTime   = System.nanoTime();
+		System.out.println("Array creation time : "+ (endTime-startTime));
+
 		System.out.println(arrayList);
 		List<Integer> array1 = Arrays.asList(1,2,3,4,5);
 		System.out.println("Array1 : "+array1);
@@ -66,6 +70,26 @@ public class ArrayListDemo {
 		ll1.clear();
 		System.out.println(ll1.pollLast());	//null
 //		ll1.removeLast();		//Throws NoSuchElementException
+		startTime = System.nanoTime();
+		LinkedList<Integer> ll = new LinkedList<>();
+		for(i=0;i<3;i++) {
+			ll.add(i);
+		}
+		endTime   = System.nanoTime();
+		System.out.println("LL creation time : "+ (endTime-startTime));
+		startTime = System.nanoTime();
+		System.out.println(arrayList.get(2));
+		endTime   = System.nanoTime();
+		System.out.println("Array elt access time : "+ (endTime-startTime));
+		
+		startTime = System.nanoTime();
+		System.out.println(ll.get(2));
+		endTime   = System.nanoTime();
+		System.out.println("LL elt access time : "+ (endTime-startTime));
+		Integer [][] array4 = {{1,3,5,6},{2,3,4,5}};
+		Integer [][] array5 = {{1,3,5,6},{2,3,4,5}};
+		System.out.println(Arrays.deepEquals(array4, array5));		//for nested arrays
+
 	}
 	static void addTen(int number) {
 		System.out.println(number+10);

@@ -3,7 +3,7 @@ package com.learn.java.ch11;
 	
 
 public class VolatileDemo {
-	volatile static int counter = 0;
+	 static int counter = 0;
 	public static void main(String[] args) {
 		//without <code>volatile</code> the variable is not aware of the updation in the other thread therefore the changes donot occur
 		//therefore only thread2 executed

@@ -62,8 +62,10 @@ class MyThread implements Runnable{
 public class Synchronisation {
 	public static void main(String[] args) {
 		MyObject object = new MyObject();
-		new MyThread(object,"swati");
-		new MyThread(object,"krishna");
-		new MyThread(object,"kochi");	
+		new MyThread(object,"first");
+		new MyThread(object,"second");
+		new MyThread(object,"third");	
+		new MyThread(object,"fourth");
+		new MyThread(object,"fifth");
 	}
 }
