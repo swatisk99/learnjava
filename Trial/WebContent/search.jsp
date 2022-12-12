@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@page import="java.util.*, com.cruds.leads.*" %>
+ <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,7 +65,9 @@
 			out.print("windows.alert(\"No matching leads found!!\");");
 			out.print("</script>");
 		} 
-		else{	%>
+		else{	
+			pageContext.setAttribute("matchingLeads",matchingLeads);
+		%>	
 			<table>
 				<thead>
 					<tr bgcolor="green">
@@ -74,27 +78,25 @@
 					</tr>
 				</thead>
 				<tbody>
-				<%
-				for(LeadInfo lead: matchingLeads){
-					if(matchingLeads.indexOf(lead)==0){
-						out.print("<tr><td>" + lead.getLeadName() + "</td>" +
-								"<td>" + lead.getEmailID() + "</td>" +
-								"<td>" + lead.getCompany() + "</td>" +
-								"<td><input type=\"radio\" name=\"selectRecord\" value=" + lead.getLeadID() + " checked=\"checked\"> </td>"+
-								"</tr>");
-					}
-					else{
-						out.print("<tr><td>" + lead.getLeadName() + "</td>" +
-							"<td>" + lead.getEmailID() + "</td>" +
-							"<td>" + lead.getCompany() + "</td>" +
-							"<td><input type=\"radio\" name=\"selectRecord\" value=" + lead.getLeadID() + " > </td>"+
-							"</tr>");
-						}
-				}
-		}
-				%>
+				<c:forEach items = "${matchingLeads}" var="lead" varStatus="status">
+					
+					<tr>
+						<td>${lead.leadName}</td>
+						<td>${lead.emailID}</td>
+						<td>${lead.company}</td>
+						<c:if test="${matchingLeads.indexOf(lead)==0}">
+							<td><input type="radio" value="${lead.getLeadID()}" name="selectRecord" checked="checked"></td>
+						</c:if>
+						<c:if test="${matchingLeads.indexOf(lead)!=0}">
+							<td><input type="radio" value="${lead.getLeadID()}" name="selectRecord"></td>
+						</c:if>
+					</tr>
+					
+				</c:forEach>
+				
 				</tbody>
 	</table>
+	<%} %>
 	</form>
 	</form>
 

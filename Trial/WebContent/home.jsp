@@ -23,7 +23,7 @@
 	</form>
 	<button id="createLeadBtn" style="float: inherit;">Add New Lead</button>
 	
-	<div id="createFormModal" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 300px; background-color: lavender; border-radius: 20px;">
+	<div id="createFormModal" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 300px; background-color: pink; border-radius: 20px;">
 		<div style="padding: 20px;">
 			<h3 style="float :left">New Lead Details</h3>
 			<button id="closeModalBtn" style="float:right">&times</button><br><br>
