@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@page import="java.util.*, com.cruds.leads.*" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,10 +25,10 @@
 	</form>
 	<button id="createLeadBtn" style="float: inherit;">Add New Lead</button>
 	
-	<div id="createFormModal" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 300px; background-color: pink; border-radius: 20px;">
+	<div id="createFormModal" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 350px; background-color: pink; border-radius: 20px;">
 		<div style="padding: 20px;">
-			<h3 style="float :left">New Lead Details</h3>
-			<button id="closeModalBtn" style="float:right">&times</button><br><br>
+			<button id="closeModalBtn" style="float:right">&times</button>
+			<h3 >New Lead Details</h3>
 				<form action="create" method="Post">
 					<label for="leadName">Lead Name	</label><br>
 					<input type="text" id="leadName" name="leadName" required pattern="[a-zA-Z ]{2,}"><br>
@@ -41,12 +43,12 @@
 
 	<form action="update" method="post">
 	<input type="button" id="updateBtn" style="float: right;" value="Update"/>
-		<div id="updateFormModal" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 300px; background-color: pink; border-radius: 20px;">
+		<div id="updateFormModal" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 350px; background-color: pink; border-radius: 20px;">
 	 		<div style="padding: 20px;">
-				<h3 style="float :left">Update Lead Details</h3>	 			
+				<h3 >Update Lead Details</h3>
 	 			<button id="closeUpdateForm" style="float:right">&times</button>
 	 				<br><br><br>
-					<label for="updatedLeadName" style="padding-top: 10px;">Lead Name	</label><br>
+					<label for="updatedLeadName">Lead Name	</label><br>
 					<input type="text" id="updatedLeadName" name="updatedLeadName" pattern="[a-zA-Z ]{2,}"><br>
 					<label for="updatedEmailID">Email	</label><br>
 					<input type="email" id="updatedEmailID" name="updatedEmailID" placeholder="a@b.cd" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
@@ -58,31 +60,32 @@
 	
 	<form action="delete" method="post" >
 	 <input type="submit" value="Delete" formaction="delete" style="float: inherit" />
+	 <br><br>
+	 
 	<table class="center">
-		<tr bgcolor="green">
+		<tr bgcolor="#eaf5fa">
 			<th autocapitalize="words" >Lead Name</th>
 			<th >Email Address</th>
 			<th>Company</th>
 			<th>Select Record</th>
 		</tr>
+		<%	List<LeadInfo> leadList = LeadDBUtil.showLeads(1);	
+			pageContext.setAttribute("leadList",leadList);
+		%>	
 		
-		<%List<LeadInfo> leadList= LeadDBUtil.showLeads(1);
-		for(LeadInfo lead: leadList){
-			if(leadList.indexOf(lead)==0){
-				out.print("<tr><td>" + lead.getLeadName() + "</td>" +
-						"<td>" + lead.getEmailID() + "</td>" +
-						"<td>" + lead.getCompany() + "</td>" +
-						"<td><input type=\"radio\" name=\"selectRecord\" value=" + lead.getLeadID() + " checked=\"checked\"> </td>"+
-						"</tr>");
-			}else{
-				out.print("<tr><td>" + lead.getLeadName() + "</td>" +
-					"<td>" + lead.getEmailID() + "</td>" +
-					"<td>" + lead.getCompany() + "</td>" +
-					"<td><input type=\"radio\" name=\"selectRecord\" value=" + lead.getLeadID() + " > </td>"+
-					"</tr>");
-			}
-		}
-		%>
+		<c:forEach var="lead" items = "${leadList}" >
+			<tr>
+				<td>${lead.leadName}</td>
+				<td>${lead.emailID}</td>
+				<td>${lead.company}</td>
+				<c:if test="${leadList.indexOf(lead)==0}">
+					<td><input type="radio" value="${lead.getLeadID()}" name="selectRecord" checked="checked"></td>
+				</c:if>
+				<c:if test="${leadList.indexOf(lead)!=0}">
+					<td><input type="radio" value="${lead.getLeadID()}" name="selectRecord"></td>
+				</c:if>
+			</tr>
+		</c:forEach>
 	</table>
 	</form>
 	</form>

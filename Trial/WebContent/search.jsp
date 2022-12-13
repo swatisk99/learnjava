@@ -15,12 +15,15 @@
 	response.sendRedirect("login.jsp");
 }
 %>
-<form action="search">
-	<input type="search" name="search" class="inputSubmit" placeholder="Search"/>
-	<input type="submit" value="Search" style="float: inherit" class="inputSubmit"/>
-</form>
+	<form action="search">
+		<input type="search" name="search" class="inputSubmit" placeholder="Search"/>
+		<input type="submit" value="Search" style="float: inherit" class="inputSubmit"/>
+	</form>
 	<form action="logout" style="float:right">
 		<input type="submit" value="Logout">
+	</form>
+	<form action="home.jsp" style="float:inherit;">
+		<input type="submit" value="Home" />
 	</form>
 	<button id="createLeadBtn" style="float: inherit;">Add New Lead</button>
 	
@@ -70,7 +73,7 @@
 		%>	
 			<table>
 				<thead>
-					<tr bgcolor="green">
+					<tr bgcolor="#eaf5fa">
 						<th autocapitalize="words" >Lead Name</th>
 						<th >Email Address</th>
 						<th>Company</th>
