@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="CRUDSApp" extends="struts-default">
+		<action name="login" class="com.cruds.login.LoginAction">
+			<result name="success">/home.jsp</result>
+			<result name="input">/login.jsp</result>			
+		</action>
+		<action name="signup" class="com.cruds.login.SignupAction">
+			<result name="success">/home.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="create" class="com.cruds.leads.CreateLeadAction">
+			<result name="success">/home.jsp</result>
+<!-- 			<result name="input">/login.jsp</result>			
+ -->	</action>
+		<action name="delete" class="com.cruds.leads.DeleteAction">
+			<result name="success">/home.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="logout" class="com.cruds.login.LogoutAction">
+			<result name="success">/login.jsp</result>
+
+		</action>
+	</package>
+</struts>
