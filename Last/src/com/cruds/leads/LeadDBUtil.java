@@ -15,7 +15,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class LeadDBUtil extends ActionSupport{
 	
 	public static final String INSERT_LEAD_SQL = "INSERT INTO LEADS " + "(LEAD_NAME, EMAIL_ID, COMPANY) VALUES " + "(?, ?, ?);";
-	public static final String SELECT_FIVE_LEAD_SQL = "SELECT * FROM LEADS ORDER BY lead_id DESC LIMIT 5 OFFSET ?;";
+	public static final String SELECT_FIVE_LEAD_SQL = "SELECT * FROM LEADS ORDER BY LEAD_ID DESC LIMIT 5 OFFSET ?;";
 	public static final String SELECT_LEAD_SQL = "SELECT * FROM LEADS WHERE LEAD_ID = ?";
 	public static final String SEARCH_LEAD_SQL = "SELECT * FROM LEADS WHERE LEAD_NAME LIKE ?"+" OR COMPANY LIKE ? "+"ORDER BY LEAD_ID DESC;";	
 	public static final String UPDATE_LEAD_SQL = "UPDATE LEADS SET LEAD_NAME = ?, EMAIL_ID = ?, COMPANY = ? WHERE LEAD_ID=?;";
@@ -56,20 +56,20 @@ public class LeadDBUtil extends ActionSupport{
 		}
 		return null;
 	}
-	public static List<LeadInfo> searchLeads(String substring) {
-		LeadInfo lead =null;
-		List<LeadInfo> matchingLeads = new LinkedList<>();
+	public static List<Map<String,String>> searchLeads(String substring) {
+		List<Map<String,String>> matchingLeads = new LinkedList<>();
 		try(Connection con = DBUtil.getConnection()){
 			PreparedStatement stmt = con.prepareStatement(SEARCH_LEAD_SQL);
 			stmt.setString(1, "%"+substring+"%");
 			stmt.setString(2, "%"+substring+"%");
 			ResultSet result = stmt.executeQuery();
 			while(result.next()) {
-				int leadID = Integer.parseInt(result.getString("LEAD_ID"));
-				String leadName = result.getString("LEAD_NAME");
-				String emailID = result.getString("EMAIL_ID");
-				String company = result.getString("COMPANY");
-				matchingLeads.add(new LeadInfo(leadID,leadName, emailID, company));
+				Map<String, String> record = new HashMap<>(); 
+				record.put("leadID", result.getString("LEAD_ID"));
+				record.put("leadName", result.getString("LEAD_NAME"));
+				record.put("emailID", result.getString("EMAIL_ID"));
+				record.put("company", result.getString("COMPANY"));
+				matchingLeads.add(record);
 			}
 			stmt.close();	result.close();
 			return matchingLeads;
@@ -80,55 +80,17 @@ public class LeadDBUtil extends ActionSupport{
 		}
 		return null;
 	}		
-	/**
-	 * @param id
-	 * @return
-	 */
-//	public static List<LeadInfo> showLeads(int page) {
-//		List<LeadInfo> allLeads = new ArrayList<>();
-//		try(Connection con = DBUtil.getConnection()){
-//			PreparedStatement stmt = con.prepareStatement(SELECT_FIVE_LEAD_SQL);
-//			stmt.setInt(1, (page-1)*5);
-//			ResultSet result = stmt.executeQuery();
-//			while(result.next()) {
-//				int leadID = Integer.parseInt(result.getString("LEAD_ID"));
-//				String leadName = result.getString("LEAD_NAME");
-//				String emailID = result.getString("EMAIL_ID");
-//				String company = result.getString("COMPANY");
-//				allLeads.add(new LeadInfo(leadID,leadName, emailID, company));
-//			}
-//			stmt.close();	result.close();
-//			return allLeads;
-////			List<Map<String, String>> records = new ArrayList<>();
-////			while(result.next()) {
-////				Map<String, String> record = new HashMap<>();
-////				record.put("leadId", result.getString("LEAD_ID"));
-////				record.put("leadName", result.getString("LEAD_NAME"));
-////				record.put("emailID", result.getString("EMAIL_ID"));
-////				record.put("company", result.getString("COMPANY"));
-////			    records.add(record);
-////			}
-////			stmt.close();	result.close();
-////			return records;
-//
-//		}
-//		catch(Exception e) {
-//			System.out.println(e);
-//		}
-//		
-//		return null;
-//	}
-	
+
 	public static List<Map<String,String>> showLeads(int page) {
 		List<Map<String,String>> allLeads = new ArrayList<>();
 		try(Connection con = DBUtil.getConnection()){
-			ResultSet pageResult = con.prepareStatement(TOTAL_LEADS).executeQuery();
-			while(pageResult.next()) {
-				int totalPages = pageResult.getInt(1)/5;
-				if(page > totalPages) {
-					page = totalPages;
-				}
-			}
+//			ResultSet pageResult = con.prepareStatement(TOTAL_LEADS).executeQuery();
+//			while(pageResult.next()) {
+//				int totalPages = pageResult.getInt(1)/5 +1;
+//				if(page > totalPages) {
+//					page = totalPages;
+//				}
+//			}
 			PreparedStatement stmt = con.prepareStatement(SELECT_FIVE_LEAD_SQL);
 			stmt.setInt(1, (page-1)*5);
 			ResultSet result = stmt.executeQuery();
@@ -154,7 +116,7 @@ public class LeadDBUtil extends ActionSupport{
 		String leadName = updateLeadInfo.getLeadName(), emailID = updateLeadInfo.getEmailID(), company = updateLeadInfo.getCompany();
 		try(Connection con = DBUtil.getConnection()){
 			PreparedStatement stmt = con.prepareStatement(UPDATE_LEAD_SQL);
-			if(leadName == null || leadName.trim().length() < 1) {
+			if(leadName == null) {
 				stmt.setString(1, existingLeadInfo.getLeadName());
 			}
 			else {

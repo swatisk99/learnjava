@@ -3,7 +3,7 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
 	"http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-	<package name="CRUDSApp" extends="struts-default">
+	<package name="default" namespace="/" extends="struts-default">
 		<action name="login" class="com.cruds.login.LoginAction">
 			<result name="success">/home.jsp</result>
 			<result name="input">/login.jsp</result>			
@@ -12,17 +12,30 @@
 			<result name="success">/home.jsp</result>
 			<result name="error">/login.jsp</result>
 		</action>
+		<action name="logout" class="com.cruds.login.LogoutAction">
+			<result name="success">/login.jsp</result>
+		</action>
 		<action name="create" class="com.cruds.leads.CreateLeadAction">
-			<result name="success">/home.jsp</result>
-<!-- 			<result name="input">/login.jsp</result>			
+			<result>/home.jsp</result>
+<!-- 		<result name="input">/login.jsp</result>			
+ -->	</action>
+		<action name="getInfo" class="com.cruds.leads.GetLeadInfoAction">
+			<result>/home.jsp</result>
+<!-- 		<result name="input">/login.jsp</result>			
+ -->	</action>
+ 		<action name="update" class="com.cruds.leads.UpdateAction">
+			<result>/home.jsp</result>
+<!-- 		<result name="input">/login.jsp</result>			
  -->	</action>
 		<action name="delete" class="com.cruds.leads.DeleteAction">
 			<result name="success">/home.jsp</result>
 			<result name="error">/login.jsp</result>
 		</action>
-		<action name="logout" class="com.cruds.login.LogoutAction">
-			<result name="success">/login.jsp</result>
-
+		<action name="display" class="com.cruds.leads.DisplayAction">
+			<result>/home.jsp</result>
+		</action>
+		<action name="search" class="com.cruds.leads.SearchAction">
+			<result>/search.jsp</result>
 		</action>
 	</package>
 </struts>

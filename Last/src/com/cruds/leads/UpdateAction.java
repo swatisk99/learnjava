@@ -2,18 +2,22 @@
 package com.cruds.leads;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
 
-public class UpdateServlet extends HttpServlet {
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
+import org.apache.struts2.ServletActionContext;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UpdateAction extends ActionSupport {
+	public String execute() throws IOException, SQLException {
+		HttpServletRequest request = ServletActionContext.getRequest();
+		if(request.getSession().getAttribute("isAdmin")==null)
+		{	
+			return ERROR;
+		}
 		String leadName = request.getParameter("leadName");
 		String emailID = request.getParameter("emailID");
 		String company = request.getParameter("company");
@@ -23,8 +27,8 @@ public class UpdateServlet extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("selectRecord"));
 		if(LeadDBUtil.updateLead(id, LeadDBUtil.getLeadInfo(id), new LeadInfo(updatedLeadName,updatedEmailID,updatedCompany))) {
 			request.getSession().setAttribute("rowUpdated", "true");
-			response.sendRedirect(request.getContextPath()+"/home.jsp");
+			return SUCCESS;
 		}
-		
+		return null;
 	}
 }

@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Error</title>
 </head>
 <body>
-Error
+There seems to have been some issue!
 </body>
 </html>

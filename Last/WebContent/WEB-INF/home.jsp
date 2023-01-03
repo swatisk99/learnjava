@@ -9,36 +9,133 @@
 <title>HomePage</title>
 <link rel="stylesheet"  href="css/style.css">
 <script src="JS/jquery.js"></script>
+<link rel="fav icon" href="favicon.png" />
 </head>
 <body>
 <% boolean isAdmin = session.getAttribute("isAdmin")==null? false:true;
 %>
 <script>
 		$(document).ready(function() {
+			$('#page').val(1)
 			$.ajax({
-				url : 'search',
+				url : 'display',
 				type : 'GET',
 				dataType : 'JSON',
 				data:{
-					search : $('#search').val()
+					page : 1	
 				},
 				success : function(response) {
 					//alert('hi');
 					//var res = JSON.parse(response);
 					debugger;
 					var print = "";
-					for(var i=0;i<response.records.length;i++){
-						print+="<tr><td>"+response.records[i].leadName+"</td><td>"+response.records[i].emailID+"</td><td>"+response.records[i].company+"</td><td><input type=\"radio\" name=\"selectRecord\" class=\"selectRecord\" value=\""+response.records[i].leadID+"\"</td></tr>";
+					for(var i=0;i<response.data.length;i++){
+						if(i==0){
+							print+="<tr><td>"+response.data[i].leadName+"</td><td>"+response.data[i].emailID+"</td><td>"+response.data[i].company+"</td><td><input type=\"radio\" name=\"selectRecord\" class=\"selectRecord\" value=\""+response.data[i].leadID+"\" checked=\"checked\"</td></tr>";
+						}
+						else{
+							print+="<tr><td>"+response.data[i].leadName+"</td><td>"+response.data[i].emailID+"</td><td>"+response.data[i].company+"</td><td><input type=\"radio\" name=\"selectRecord\" class=\"selectRecord\" value=\""+response.data[i].leadID+"\"</td></tr>";
+						}
 					}
+					$('#totalPages').val(response.totalPages);
 					$("#records").html(print);
 				},
 			});
-			$("#updateBtn").click(function() {
+			$("#nextBtn").click(function() {
+				if($('#page').val() == parseInt($('#totalPages').val())){
+					$('#nextBtn').css('cursor', 'not-allowed');
+					var nextPage = $('#page').val();
+				}
+				else{
+					var nextPage = parseInt($("#page").val())+1;
+					$('#page').val(nextPage);
+					$.ajax({
+						url : 'display',
+						type : 'GET',
+						dataType : 'JSON',
+						data:{
+							page : parseInt($("#page").val())
+						},
+						success : function(response) {
+							debugger;
+							var print = "";
+							for(var i=0;i<response.data.length;i++){
+								if(i==0){
+									print+="<tr><td>"+response.data[i].leadName+"</td><td>"+response.data[i].emailID+"</td><td>"+response.data[i].company+"</td><td><input type=\"radio\" name=\"selectRecord\" class=\"selectRecord\" value=\""+response.data[i].leadID+"\" checked=\"checked\"</td></tr>";
+								}
+								else{
+									print+="<tr><td>"+response.data[i].leadName+"</td><td>"+response.data[i].emailID+"</td><td>"+response.data[i].company+"</td><td><input type=\"radio\" name=\"selectRecord\" class=\"selectRecord\" value=\""+response.data[i].leadID+"\"</td></tr>";
+								}
+							}
+							$("#records").html(print);
+						},
+					});
+				}
 				
-				var updateFormModal = document.getElementById('updateFormModal');
-				updateFormModal.style.display = 'block';
-				document.querySelectorAll('body >*:not(#updateForm)').forEach(e => e.style.filter = "blur(2px)");
-				document.querySelectorAll('form >*:not(#updateFormModal)').forEach(e => e.style.filter = "blur(2px)");
+			});
+			$("#prevBtn").click(function() {
+				if($('#page').val() == 1){
+					$('#prevBtn').css('cursor', 'not-allowed');
+					var prevPage = 1;
+				}
+				else{
+					var prevPage = parseInt($("#page").val())-1;
+					$('#page').val(prevPage);
+					$.ajax({
+						url : 'display',
+						type : 'GET',
+						dataType : 'JSON',
+						data:{
+							page : parseInt($("#page").val())
+						},
+						success : function(response) {
+							debugger;
+							var print = "";
+							for(var i=0;i<response.data.length;i++){
+								if(i==0){
+									print+="<tr><td>"+response.data[i].leadName+"</td><td>"+response.data[i].emailID+"</td><td>"+response.data[i].company+"</td><td><input type=\"radio\" name=\"selectRecord\" class=\"selectRecord\" value=\""+response.data[i].leadID+"\" checked=\"checked\"</td></tr>";
+								}
+								else{
+									print+="<tr><td>"+response.data[i].leadName+"</td><td>"+response.data[i].emailID+"</td><td>"+response.data[i].company+"</td><td><input type=\"radio\" name=\"selectRecord\" class=\"selectRecord\" value=\""+response.data[i].leadID+"\"</td></tr>";
+								}
+							}
+							$("#records").html(print);
+						},
+					});
+				}
+			});
+			$("#searchBtn").click(function(){
+				event.preventDefault();
+				$('#records').css({
+					'overflow-y': 'scroll',
+					'max-height': '100px'
+				});
+				$.ajax({
+					url : 'search',
+					type : 'GET',
+					dataType : 'JSON',
+					data:{
+						search : $('#search').val()
+					},
+					success : function(response) {
+						//alert('hi');
+						//var res = JSON.parse(response);
+						debugger;
+						var print = "";
+						for(var i=0;i<response.records.length;i++){
+							print+="<tr><td>"+response.records[i].leadName+"</td><td>"+response.records[i].emailID+"</td><td>"+response.records[i].company+"</td><td><input type=\"radio\" name=\"selectRecord\" class=\"selectRecord\" value=\""+response.records[i].leadID+"\"</td></tr>";
+						}
+						$("#records").html(print);
+						
+					},
+				});
+			});
+			$("#updateBtn").click(function() {
+				$('#updateFormModal').show();
+				var blurredElements = $('body >*:not(#updateForm)');
+				  blurredElements.css('filter', 'blur(2px)');
+				  blurredElements = $('form >*:not(#updateFormModal)');
+				  blurredElements.css('filter', 'blur(2px)');
 			/* 	closeUpdateFormBtn.addEventListener('click',function(){
 					updateFormModal.style.display = 'none';
 					document.querySelectorAll('body >*').forEach(e => e.style.filter = "blur(0px)")
@@ -60,8 +157,8 @@
 			});
 			
 			$("#closeUpdateForm").click(function() {
-				updateFormModal.style.display = 'none';
-				document.querySelectorAll('body >*').forEach(e => e.style.filter = "blur(0px)");
+				$('#updateFormModal').hide();
+				blurredElements.css('filter', 'blur(0px)');
 				return false;
 			});
 			
@@ -69,7 +166,7 @@
 </script>
 <form action="search">
 	<input type="search" required name="search" id="search" class="inputSubmit" placeholder="Search Lead Name"/>
-	<input type="submit" value="Search" style="float: inherit" class="inputSubmit" id="searchBtn"/>
+	<input type="button" value="Search" style="float: inherit" class="inputSubmit" id="searchBtn"/>
 </form>
 	<form action="logout" method="post" style="float:right">
 		<input type="submit" value="Logout" >
@@ -91,7 +188,7 @@
 				</form>
 	   	 </div>
 	</div>
-	<form  id="updateForm" action="getInfo">
+	<form  id="updateForm" action="update">
 	<c:if test="${isAdmin == 'true'}">
 		<input type="button" id="updateBtn" style="float: right;" value="Update"/>
 	</c:if>
@@ -109,7 +206,7 @@
 				<input type="email" id="updatedEmailID" name="updatedEmailID" placeholder="a@b.cd" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
 				<label for="updatedCompany">Company	</label><br>
 				<input type="text" id="updatedCompany" name="updatedCompany"><br><br>
-				<input type="submit" value="Submit" formaction="update">
+				<input type="submit" value="Submit">
     	 </div>
 	</div>
 	
@@ -130,8 +227,8 @@
 			<th>Select Record</th>
 		</tr>
 		</thead>
-		<tbody id="records">
 		
+		<tbody id="records" style="overflow-y:hidden;">
 		</tbody>
 	</table>
 	</form>
