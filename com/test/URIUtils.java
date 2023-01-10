@@ -1,7 +1,9 @@
 //$Id$
 package com.test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -10,7 +12,7 @@ import java.util.Map;
  * @author swati-15154
  *
  */
-public class URLUtils {
+public class URIUtils {
 	/**
 	 * uriPattern gives idea of keys and corresponding value's tag. on iterating over the url keys are identifed and it's values are returned
 	 * @param uri
@@ -22,13 +24,20 @@ public class URLUtils {
 
 		// splits url pattern wrt '/'
 		String[] patternItems = uriPattern.split("/");
-		String[] keyList = new String[patternItems.length];
+		List<String> keyList = new ArrayList<String>();
 		Map<String,String> keys = new HashMap<>();
 		// key value pairs are identified from the pattern
 		for (int i = 0, j = 0; i < patternItems.length; i++) {
 			String item = patternItems[i];
 			if (item.matches("\\{[a-zA-Z0-9]+\\}")) {
-				keyList[j] = item.substring(1, item.length() - 1);
+				String token = item.substring(1, item.length() - 1);
+				//Check if key name already exists
+				for(int k=0;k<j;k++) {
+					if(keyList.get(k).equals(token)) {
+						throw new Exception("URI pattern cannot have same variable name");
+					}
+				}
+				keyList.add(item.substring(1, item.length() - 1));
 				j++;
 //				 System.out.println(keyName[j]+" : "+keyList[j++]); //(j++)here if uncomment
 			}
@@ -48,25 +57,26 @@ public class URLUtils {
 					return keys;
 				}
 				if(patternItems[i].matches("\\{[a-zA-Z0-9]+\\}")){
-					keys.put(keyList[j], items[i]);
+					keys.put(keyList.get(j), items[i]);
 					return keys;
 				}
 				if(patternItems[i+1].matches("\\{[a-zA-Z0-9]+\\}")){
-					keys.put(keyList[j], "null");
+					keys.put(keyList.get(j), "null");
 					return keys;
 				}
 				else {
+//					if(j==keyList.size() && i<patternItems.length-1)
 					throw new Exception("Incomplete URI");
 				}
 			}
 			if (patternItems[i].matches("\\{[a-zA-Z0-9]+\\}")) {	// matches variables in the uri	
 				// if key was not last and key has an empty value string, exception is thrown
 				if (items[i].isEmpty()) {
-					throw new Exception("Value for " + keyList[j] + " is mandatory");
+					throw new Exception("Value for " + keyList.get(j) + " is mandatory");
 				} 
 				else {
 					if (items[i].matches("[a-zA-Z0-9._-]+")) {
-						keys.put(keyList[j++],items[i]);
+						keys.put(keyList.get(j++),items[i]);
 					} 
 					else {
 							throw new Exception("Invalid URI");
@@ -78,15 +88,15 @@ public class URLUtils {
 				continue;
 			} 
 			else {	// Non matches
-				throw new Exception("Invalid URI pattern");
+				throw new Exception("Invalid URI");
 			}
 		}
 		return keys;
 	}
 
 	public static void main(String[] args) throws Exception {
-		String uriPattern = "{version}/a/b/{as}/df/sadf/df";
-		String actualUri = "1.0/a/b/aa";
+		String uriPattern = "meeting/{key}/token/{token}/all/{start}/start";
+		String actualUri = "meeting/111/token/11/all";
 		System.out.println(extractURLKeys(actualUri, uriPattern));
 	}
 }

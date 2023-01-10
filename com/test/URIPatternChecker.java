@@ -18,7 +18,7 @@ public class URIPatternChecker {
 					System.out.println("Enter the Actual URI : ");
 					String uri = scanner.next();
 					scanner.nextLine();
-					System.out.println(URLUtils.extractURLKeys(uri,uriPattern));	
+					System.out.println(URIUtils.extractURLKeys(uri,uriPattern));	
 				}
 				catch(Exception e) {
 					System.out.println(e.getMessage());
