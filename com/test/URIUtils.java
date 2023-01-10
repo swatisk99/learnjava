@@ -56,11 +56,14 @@ public class URIUtils {
 				if(i == patternLength-1 && patternItems[i].equals(items[i])) {
 					return keys;
 				}
-				if(patternItems[i].matches("\\{[a-zA-Z0-9]+\\}")){
+				else if(patternItems[i].matches("\\{[a-zA-Z0-9]+\\}")){
+					if(!patternItems[i+1].matches("\\{[a-zA-Z0-9]+\\}")){
+						throw new Exception("Incomplete URI");
+					}
 					keys.put(keyList.get(j), items[i]);
 					return keys;
 				}
-				if(patternItems[i+1].matches("\\{[a-zA-Z0-9]+\\}")){
+				else if(patternItems[i+1].matches("\\{[a-zA-Z0-9]+\\}")){
 					keys.put(keyList.get(j), "null");
 					return keys;
 				}
@@ -95,8 +98,8 @@ public class URIUtils {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String uriPattern = "meeting/{key}/token/{token}/all/{start}/start";
-		String actualUri = "meeting/111/token/11/all";
+		String uriPattern = "meeting/{key}/tab/token/{token}/all/start";
+		String actualUri = "meeting/111";
 		System.out.println(extractURLKeys(actualUri, uriPattern));
 	}
 }
